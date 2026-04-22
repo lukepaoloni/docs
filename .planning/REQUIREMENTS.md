@@ -70,30 +70,28 @@
 
 ## Traceability
 
-*(To be populated by roadmapper)*
-
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
-| SITE-01 | — | — |
-| SITE-02 | — | — |
-| SITE-03 | — | — |
-| SITE-04 | — | — |
-| HOME-01 | — | — |
-| HOME-02 | — | — |
-| HOME-03 | — | — |
-| EXPORT-01 | — | — |
-| EXPORT-02 | — | — |
-| CSV-01 | — | — |
-| CSV-02 | — | — |
-| CSV-03 | — | — |
-| CSV-04 | — | — |
-| IMPORT-01 | — | — |
-| IMPORT-02 | — | — |
-| IMPORT-03 | — | — |
-| IMPORT-04 | — | — |
-| TROUBLE-01 | — | — |
-| TROUBLE-02 | — | — |
-| TROUBLE-03 | — | — |
+| SITE-01 | Phase 1 | Pending |
+| SITE-02 | Phase 1 | Pending |
+| SITE-03 | Phase 1 | Pending |
+| SITE-04 | Phase 1 | Pending |
+| EXPORT-01 | Phase 2 | Pending |
+| EXPORT-02 | Phase 2 | Pending |
+| CSV-01 | Phase 3 | Pending |
+| CSV-02 | Phase 3 | Pending |
+| CSV-03 | Phase 3 | Pending |
+| CSV-04 | Phase 3 | Pending |
+| IMPORT-01 | Phase 4 | Pending |
+| IMPORT-02 | Phase 4 | Pending |
+| IMPORT-03 | Phase 4 | Pending |
+| IMPORT-04 | Phase 4 | Pending |
+| TROUBLE-01 | Phase 5 | Pending |
+| TROUBLE-02 | Phase 5 | Pending |
+| TROUBLE-03 | Phase 5 | Pending |
+| HOME-01 | Phase 6 | Pending |
+| HOME-02 | Phase 6 | Pending |
+| HOME-03 | Phase 6 | Pending |
 
 ---
 
