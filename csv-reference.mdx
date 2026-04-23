@@ -11,7 +11,7 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 |--------|------|----------|---------------|---------|
 | Zone | Text | Yes | Any zone name you've set up in Shopify | "US Standard" |
 | Country Code | Text | Yes | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
-| Province | Text | No | State or province code (CA, NY, TX) or leave blank | "CA" |
+| Province | Text | No | Full state or province name (California, Ontario) or leave blank | "California" |
 | Postcode | Text | No | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
 | City | Text | No | City name or leave blank | "New York" |
 | Name | Text | Yes | A short name for this rate | "Standard Shipping" |
@@ -275,7 +275,1140 @@ The two-letter code for the destination country. Use standard ISO codes.
 </Accordion>
 
 ### Province
-The state, province, or region within a country. Enter the code (like "CA" for California or "NY" for New York). Leave blank if you want the rate to apply to all provinces in the country.
+The state, province, or region within a country. Enter the full name (like "California" or "Ontario"). Leave blank if you want the rate to apply to all provinces in the country.
+
+<Accordion title="See supported province names">
+| Province Name                            | Country Name         | Country Code |
+|------------------------------------------|----------------------|----------|
+| Buenos Aires                             | Argentina            | AR       |
+| Catamarca                                | Argentina            | AR       |
+| Chaco                                    | Argentina            | AR       |
+| Chubut                                   | Argentina            | AR       |
+| Ciudad Autónoma de Buenos Aires          | Argentina            | AR       |
+| Córdoba                                  | Argentina            | AR       |
+| Corrientes                               | Argentina            | AR       |
+| Entre Ríos                               | Argentina            | AR       |
+| Formosa                                  | Argentina            | AR       |
+| Jujuy                                    | Argentina            | AR       |
+| La Pampa                                 | Argentina            | AR       |
+| La Rioja                                 | Argentina            | AR       |
+| Mendoza                                  | Argentina            | AR       |
+| Misiones                                 | Argentina            | AR       |
+| Neuquén                                  | Argentina            | AR       |
+| Río Negro                                | Argentina            | AR       |
+| Salta                                    | Argentina            | AR       |
+| San Juan                                 | Argentina            | AR       |
+| San Luis                                 | Argentina            | AR       |
+| Santa Cruz                               | Argentina            | AR       |
+| Santa Fe                                 | Argentina            | AR       |
+| Santiago Del Estero                      | Argentina            | AR       |
+| Tierra Del Fuego                         | Argentina            | AR       |
+| Tucumán                                  | Argentina            | AR       |
+| Australian Capital Territory             | Australia            | AU       |
+| New South Wales                          | Australia            | AU       |
+| Northern Territory                       | Australia            | AU       |
+| Queensland                               | Australia            | AU       |
+| South Australia                          | Australia            | AU       |
+| Tasmania                                 | Australia            | AU       |
+| Victoria                                 | Australia            | AU       |
+| Western Australia                        | Australia            | AU       |
+| Acre                                     | Brazil               | BR       |
+| Alagoas                                  | Brazil               | BR       |
+| Amapá                                    | Brazil               | BR       |
+| Amazonas                                 | Brazil               | BR       |
+| Bahia                                    | Brazil               | BR       |
+| Ceará                                    | Brazil               | BR       |
+| Distrito Federal                         | Brazil               | BR       |
+| Espírito Santo                           | Brazil               | BR       |
+| Goiás                                    | Brazil               | BR       |
+| Maranhão                                 | Brazil               | BR       |
+| Mato Grosso                              | Brazil               | BR       |
+| Mato Grosso do Sul                       | Brazil               | BR       |
+| Minas Gerais                             | Brazil               | BR       |
+| Pará                                     | Brazil               | BR       |
+| Paraíba                                  | Brazil               | BR       |
+| Paraná                                   | Brazil               | BR       |
+| Pernambuco                               | Brazil               | BR       |
+| Piauí                                    | Brazil               | BR       |
+| Rio de Janeiro                           | Brazil               | BR       |
+| Rio Grande do Norte                      | Brazil               | BR       |
+| Rio Grande do Sul                        | Brazil               | BR       |
+| Rondônia                                 | Brazil               | BR       |
+| Roraima                                  | Brazil               | BR       |
+| Santa Catarina                           | Brazil               | BR       |
+| São Paulo                                | Brazil               | BR       |
+| Sergipe                                  | Brazil               | BR       |
+| Tocantins                                | Brazil               | BR       |
+| Alberta                                  | Canada               | CA       |
+| British Columbia                         | Canada               | CA       |
+| Manitoba                                 | Canada               | CA       |
+| New Brunswick                            | Canada               | CA       |
+| Newfoundland and Labrador                | Canada               | CA       |
+| Northwest Territories                    | Canada               | CA       |
+| Nova Scotia                              | Canada               | CA       |
+| Nunavut                                  | Canada               | CA       |
+| Ontario                                  | Canada               | CA       |
+| Prince Edward Island                     | Canada               | CA       |
+| Quebec                                   | Canada               | CA       |
+| Saskatchewan                             | Canada               | CA       |
+| Yukon                                    | Canada               | CA       |
+| Antofagasta                              | Chile                | CL       |
+| Araucanía                                | Chile                | CL       |
+| Arica and Parinacota                     | Chile                | CL       |
+| Atacama                                  | Chile                | CL       |
+| Aysén                                    | Chile                | CL       |
+| Biobío                                   | Chile                | CL       |
+| Coquimbo                                 | Chile                | CL       |
+| Los Lagos                                | Chile                | CL       |
+| Los Ríos                                 | Chile                | CL       |
+| Magallanes                               | Chile                | CL       |
+| Maule                                    | Chile                | CL       |
+| Ñuble                                    | Chile                | CL       |
+| O'Higgins                                | Chile                | CL       |
+| Santiago                                 | Chile                | CL       |
+| Tarapacá                                 | Chile                | CL       |
+| Valparaíso                               | Chile                | CL       |
+| Anhui                                    | China                | CN       |
+| Beijing                                  | China                | CN       |
+| Chongqing                                | China                | CN       |
+| Fujian                                   | China                | CN       |
+| Gansu                                    | China                | CN       |
+| Guangdong                                | China                | CN       |
+| Guangxi                                  | China                | CN       |
+| Guizhou                                  | China                | CN       |
+| Hainan                                   | China                | CN       |
+| Hebei                                    | China                | CN       |
+| Heilongjiang                             | China                | CN       |
+| Henan                                    | China                | CN       |
+| Hubei                                    | China                | CN       |
+| Hunan                                    | China                | CN       |
+| Inner Mongolia                           | China                | CN       |
+| Jiangsu                                  | China                | CN       |
+| Jiangxi                                  | China                | CN       |
+| Jilin                                    | China                | CN       |
+| Liaoning                                 | China                | CN       |
+| Ningxia                                  | China                | CN       |
+| Qinghai                                  | China                | CN       |
+| Shaanxi                                  | China                | CN       |
+| Shandong                                 | China                | CN       |
+| Shanghai                                 | China                | CN       |
+| Shanxi                                   | China                | CN       |
+| Sichuan                                  | China                | CN       |
+| Tianjin                                  | China                | CN       |
+| Xinjiang                                 | China                | CN       |
+| Xizang                                   | China                | CN       |
+| Yunnan                                   | China                | CN       |
+| Zhejiang                                 | China                | CN       |
+| Amazonas                                 | Colombia             | CO       |
+| Antioquia                                | Colombia             | CO       |
+| Arauca                                   | Colombia             | CO       |
+| Atlántico                                | Colombia             | CO       |
+| Bogotá, D.C.                             | Colombia             | CO       |
+| Bolívar                                  | Colombia             | CO       |
+| Boyacá                                   | Colombia             | CO       |
+| Caldas                                   | Colombia             | CO       |
+| Caquetá                                  | Colombia             | CO       |
+| Casanare                                 | Colombia             | CO       |
+| Cauca                                    | Colombia             | CO       |
+| Cesar                                    | Colombia             | CO       |
+| Chocó                                    | Colombia             | CO       |
+| Córdoba                                  | Colombia             | CO       |
+| Cundinamarca                             | Colombia             | CO       |
+| Guainía                                  | Colombia             | CO       |
+| Guaviare                                 | Colombia             | CO       |
+| Huila                                    | Colombia             | CO       |
+| La Guajira                               | Colombia             | CO       |
+| Magdalena                                | Colombia             | CO       |
+| Meta                                     | Colombia             | CO       |
+| Nariño                                   | Colombia             | CO       |
+| Norte de Santander                       | Colombia             | CO       |
+| Putumayo                                 | Colombia             | CO       |
+| Quindío                                  | Colombia             | CO       |
+| Risaralda                                | Colombia             | CO       |
+| San Andrés, Providencia y Santa Catalina | Colombia             | CO       |
+| Santander                                | Colombia             | CO       |
+| Sucre                                    | Colombia             | CO       |
+| Tolima                                   | Colombia             | CO       |
+| Valle del Cauca                          | Colombia             | CO       |
+| Vaupés                                   | Colombia             | CO       |
+| Vichada                                  | Colombia             | CO       |
+| Alajuela                                 | Costa Rica           | CR       |
+| Cartago                                  | Costa Rica           | CR       |
+| Guanacaste                               | Costa Rica           | CR       |
+| Heredia                                  | Costa Rica           | CR       |
+| Limón                                    | Costa Rica           | CR       |
+| Puntarenas                               | Costa Rica           | CR       |
+| San José                                 | Costa Rica           | CR       |
+| 6th of October                           | Egypt                | EG       |
+| Al Sharqia                               | Egypt                | EG       |
+| Alexandria                               | Egypt                | EG       |
+| Aswan                                    | Egypt                | EG       |
+| Asyut                                    | Egypt                | EG       |
+| Beheira                                  | Egypt                | EG       |
+| Beni Suef                                | Egypt                | EG       |
+| Cairo                                    | Egypt                | EG       |
+| Dakahlia                                 | Egypt                | EG       |
+| Damietta                                 | Egypt                | EG       |
+| Faiyum                                   | Egypt                | EG       |
+| Gharbia                                  | Egypt                | EG       |
+| Giza                                     | Egypt                | EG       |
+| Helwan                                   | Egypt                | EG       |
+| Ismailia                                 | Egypt                | EG       |
+| Kafr el-Sheikh                           | Egypt                | EG       |
+| Luxor                                    | Egypt                | EG       |
+| Matrouh                                  | Egypt                | EG       |
+| Minya                                    | Egypt                | EG       |
+| Monufia                                  | Egypt                | EG       |
+| New Valley                               | Egypt                | EG       |
+| North Sinai                              | Egypt                | EG       |
+| Port Said                                | Egypt                | EG       |
+| Qalyubia                                 | Egypt                | EG       |
+| Qena                                     | Egypt                | EG       |
+| Red Sea                                  | Egypt                | EG       |
+| Sohag                                    | Egypt                | EG       |
+| South Sinai                              | Egypt                | EG       |
+| Suez                                     | Egypt                | EG       |
+| Ahuachapán                               | El Salvador          | SV       |
+| Cabañas                                  | El Salvador          | SV       |
+| Chalatenango                             | El Salvador          | SV       |
+| Cuscatlán                                | El Salvador          | SV       |
+| La Libertad                              | El Salvador          | SV       |
+| La Paz                                   | El Salvador          | SV       |
+| La Unión                                 | El Salvador          | SV       |
+| Morazán                                  | El Salvador          | SV       |
+| San Miguel                               | El Salvador          | SV       |
+| San Salvador                             | El Salvador          | SV       |
+| San Vicente                              | El Salvador          | SV       |
+| Santa Ana                                | El Salvador          | SV       |
+| Sonsonate                                | El Salvador          | SV       |
+| Usulután                                 | El Salvador          | SV       |
+| Alta Verapaz                             | Guatemala            | GT       |
+| Baja Verapaz                             | Guatemala            | GT       |
+| Chimaltenango                            | Guatemala            | GT       |
+| Chiquimula                               | Guatemala            | GT       |
+| El Progreso                              | Guatemala            | GT       |
+| Escuintla                                | Guatemala            | GT       |
+| Guatemala                                | Guatemala            | GT       |
+| Huehuetenango                            | Guatemala            | GT       |
+| Izabal                                   | Guatemala            | GT       |
+| Jalapa                                   | Guatemala            | GT       |
+| Jutiapa                                  | Guatemala            | GT       |
+| Petén                                    | Guatemala            | GT       |
+| Quetzaltenango                           | Guatemala            | GT       |
+| Quiché                                   | Guatemala            | GT       |
+| Retalhuleu                               | Guatemala            | GT       |
+| Sacatepéquez                             | Guatemala            | GT       |
+| San Marcos                               | Guatemala            | GT       |
+| Santa Rosa                               | Guatemala            | GT       |
+| Sololá                                   | Guatemala            | GT       |
+| Suchitepéquez                            | Guatemala            | GT       |
+| Totonicapán                              | Guatemala            | GT       |
+| Zacapa                                   | Guatemala            | GT       |
+| Hong Kong Island                         | Hong Kong            | HK       |
+| Kowloon                                  | Hong Kong            | HK       |
+| New Territories                          | Hong Kong            | HK       |
+| Andaman and Nicobar Islands              | India                | IN       |
+| Andhra Pradesh                           | India                | IN       |
+| Arunachal Pradesh                        | India                | IN       |
+| Assam                                    | India                | IN       |
+| Bihar                                    | India                | IN       |
+| Chandigarh                               | India                | IN       |
+| Chhattisgarh                             | India                | IN       |
+| Dadra and Nagar Haveli                   | India                | IN       |
+| Daman and Diu                            | India                | IN       |
+| Delhi                                    | India                | IN       |
+| Goa                                      | India                | IN       |
+| Gujarat                                  | India                | IN       |
+| Haryana                                  | India                | IN       |
+| Himachal Pradesh                         | India                | IN       |
+| Jammu and Kashmir                        | India                | IN       |
+| Jharkhand                                | India                | IN       |
+| Karnataka                                | India                | IN       |
+| Kerala                                   | India                | IN       |
+| Ladakh                                   | India                | IN       |
+| Lakshadweep                              | India                | IN       |
+| Madhya Pradesh                           | India                | IN       |
+| Maharashtra                              | India                | IN       |
+| Manipur                                  | India                | IN       |
+| Meghalaya                                | India                | IN       |
+| Mizoram                                  | India                | IN       |
+| Nagaland                                 | India                | IN       |
+| Odisha                                   | India                | IN       |
+| Puducherry                               | India                | IN       |
+| Punjab                                   | India                | IN       |
+| Rajasthan                                | India                | IN       |
+| Sikkim                                   | India                | IN       |
+| Tamil Nadu                               | India                | IN       |
+| Telangana                                | India                | IN       |
+| Tripura                                  | India                | IN       |
+| Uttar Pradesh                            | India                | IN       |
+| Uttarakhand                              | India                | IN       |
+| West Bengal                              | India                | IN       |
+| Aceh                                     | Indonesia            | ID       |
+| Bali                                     | Indonesia            | ID       |
+| Bangka Belitung                          | Indonesia            | ID       |
+| Banten                                   | Indonesia            | ID       |
+| Bengkulu                                 | Indonesia            | ID       |
+| Gorontalo                                | Indonesia            | ID       |
+| Jakarta                                  | Indonesia            | ID       |
+| Jambi                                    | Indonesia            | ID       |
+| Jawa Barat                               | Indonesia            | ID       |
+| Jawa Tengah                              | Indonesia            | ID       |
+| Jawa Timur                               | Indonesia            | ID       |
+| Kalimantan Barat                         | Indonesia            | ID       |
+| Kalimantan Selatan                       | Indonesia            | ID       |
+| Kalimantan Tengah                        | Indonesia            | ID       |
+| Kalimantan Timur                         | Indonesia            | ID       |
+| Kalimantan Utara                         | Indonesia            | ID       |
+| Kepulauan Riau                           | Indonesia            | ID       |
+| Lampung                                  | Indonesia            | ID       |
+| Maluku                                   | Indonesia            | ID       |
+| Maluku Utara                             | Indonesia            | ID       |
+| North Sumatra                            | Indonesia            | ID       |
+| Nusa Tenggara Barat                      | Indonesia            | ID       |
+| Nusa Tenggara Timur                      | Indonesia            | ID       |
+| Papua                                    | Indonesia            | ID       |
+| Papua Barat                              | Indonesia            | ID       |
+| Riau                                     | Indonesia            | ID       |
+| South Sumatra                            | Indonesia            | ID       |
+| Sulawesi Barat                           | Indonesia            | ID       |
+| Sulawesi Selatan                         | Indonesia            | ID       |
+| Sulawesi Tengah                          | Indonesia            | ID       |
+| Sulawesi Tenggara                        | Indonesia            | ID       |
+| Sulawesi Utara                           | Indonesia            | ID       |
+| West Sumatra                             | Indonesia            | ID       |
+| Yogyakarta                               | Indonesia            | ID       |
+| Carlow                                   | Ireland              | IE       |
+| Cavan                                    | Ireland              | IE       |
+| Clare                                    | Ireland              | IE       |
+| Cork                                     | Ireland              | IE       |
+| Donegal                                  | Ireland              | IE       |
+| Dublin                                   | Ireland              | IE       |
+| Galway                                   | Ireland              | IE       |
+| Kerry                                    | Ireland              | IE       |
+| Kildare                                  | Ireland              | IE       |
+| Kilkenny                                 | Ireland              | IE       |
+| Laois                                    | Ireland              | IE       |
+| Leitrim                                  | Ireland              | IE       |
+| Limerick                                 | Ireland              | IE       |
+| Longford                                 | Ireland              | IE       |
+| Louth                                    | Ireland              | IE       |
+| Mayo                                     | Ireland              | IE       |
+| Meath                                    | Ireland              | IE       |
+| Monaghan                                 | Ireland              | IE       |
+| Offaly                                   | Ireland              | IE       |
+| Roscommon                                | Ireland              | IE       |
+| Sligo                                    | Ireland              | IE       |
+| Tipperary                                | Ireland              | IE       |
+| Waterford                                | Ireland              | IE       |
+| Westmeath                                | Ireland              | IE       |
+| Wexford                                  | Ireland              | IE       |
+| Wicklow                                  | Ireland              | IE       |
+| Agrigento                                | Italy                | IT       |
+| Alessandria                              | Italy                | IT       |
+| Ancona                                   | Italy                | IT       |
+| Aosta                                    | Italy                | IT       |
+| Arezzo                                   | Italy                | IT       |
+| Ascoli Piceno                            | Italy                | IT       |
+| Asti                                     | Italy                | IT       |
+| Avellino                                 | Italy                | IT       |
+| Bari                                     | Italy                | IT       |
+| Barletta-Andria-Trani                    | Italy                | IT       |
+| Belluno                                  | Italy                | IT       |
+| Benevento                                | Italy                | IT       |
+| Bergamo                                  | Italy                | IT       |
+| Biella                                   | Italy                | IT       |
+| Bologna                                  | Italy                | IT       |
+| Bolzano                                  | Italy                | IT       |
+| Brescia                                  | Italy                | IT       |
+| Brindisi                                 | Italy                | IT       |
+| Cagliari                                 | Italy                | IT       |
+| Caltanissetta                            | Italy                | IT       |
+| Campobasso                               | Italy                | IT       |
+| Carbonia-Iglesias                        | Italy                | IT       |
+| Caserta                                  | Italy                | IT       |
+| Catania                                  | Italy                | IT       |
+| Catanzaro                                | Italy                | IT       |
+| Chieti                                   | Italy                | IT       |
+| Como                                     | Italy                | IT       |
+| Cosenza                                  | Italy                | IT       |
+| Cremona                                  | Italy                | IT       |
+| Crotone                                  | Italy                | IT       |
+| Cuneo                                    | Italy                | IT       |
+| Enna                                     | Italy                | IT       |
+| Fermo                                    | Italy                | IT       |
+| Ferrara                                  | Italy                | IT       |
+| Firenze                                  | Italy                | IT       |
+| Foggia                                   | Italy                | IT       |
+| Forlì-Cesena                             | Italy                | IT       |
+| Frosinone                                | Italy                | IT       |
+| Genova                                   | Italy                | IT       |
+| Gorizia                                  | Italy                | IT       |
+| Grosseto                                 | Italy                | IT       |
+| Imperia                                  | Italy                | IT       |
+| Isernia                                  | Italy                | IT       |
+| L'Aquila                                 | Italy                | IT       |
+| La Spezia                                | Italy                | IT       |
+| Latina                                   | Italy                | IT       |
+| Lecce                                    | Italy                | IT       |
+| Lecco                                    | Italy                | IT       |
+| Livorno                                  | Italy                | IT       |
+| Lodi                                     | Italy                | IT       |
+| Lucca                                    | Italy                | IT       |
+| Macerata                                 | Italy                | IT       |
+| Mantova                                  | Italy                | IT       |
+| Massa-Carrara                            | Italy                | IT       |
+| Matera                                   | Italy                | IT       |
+| Medio Campidano                          | Italy                | IT       |
+| Messina                                  | Italy                | IT       |
+| Milano                                   | Italy                | IT       |
+| Modena                                   | Italy                | IT       |
+| Monza e Brianza                          | Italy                | IT       |
+| Napoli                                   | Italy                | IT       |
+| Novara                                   | Italy                | IT       |
+| Nuoro                                    | Italy                | IT       |
+| Ogliastra                                | Italy                | IT       |
+| Olbia-Tempio                             | Italy                | IT       |
+| Oristano                                 | Italy                | IT       |
+| Padova                                   | Italy                | IT       |
+| Palermo                                  | Italy                | IT       |
+| Parma                                    | Italy                | IT       |
+| Pavia                                    | Italy                | IT       |
+| Perugia                                  | Italy                | IT       |
+| Pesaro e Urbino                          | Italy                | IT       |
+| Pescara                                  | Italy                | IT       |
+| Piacenza                                 | Italy                | IT       |
+| Pisa                                     | Italy                | IT       |
+| Pistoia                                  | Italy                | IT       |
+| Pordenone                                | Italy                | IT       |
+| Potenza                                  | Italy                | IT       |
+| Prato                                    | Italy                | IT       |
+| Ragusa                                   | Italy                | IT       |
+| Ravenna                                  | Italy                | IT       |
+| Reggio Calabria                          | Italy                | IT       |
+| Reggio Emilia                            | Italy                | IT       |
+| Rieti                                    | Italy                | IT       |
+| Rimini                                   | Italy                | IT       |
+| Roma                                     | Italy                | IT       |
+| Rovigo                                   | Italy                | IT       |
+| Salerno                                  | Italy                | IT       |
+| Sassari                                  | Italy                | IT       |
+| Savona                                   | Italy                | IT       |
+| Siena                                    | Italy                | IT       |
+| Siracusa                                 | Italy                | IT       |
+| Sondrio                                  | Italy                | IT       |
+| Taranto                                  | Italy                | IT       |
+| Teramo                                   | Italy                | IT       |
+| Terni                                    | Italy                | IT       |
+| Torino                                   | Italy                | IT       |
+| Trapani                                  | Italy                | IT       |
+| Trento                                   | Italy                | IT       |
+| Treviso                                  | Italy                | IT       |
+| Trieste                                  | Italy                | IT       |
+| Udine                                    | Italy                | IT       |
+| Varese                                   | Italy                | IT       |
+| Venezia                                  | Italy                | IT       |
+| Verbano-Cusio-Ossola                     | Italy                | IT       |
+| Vercelli                                 | Italy                | IT       |
+| Verona                                   | Italy                | IT       |
+| Vibo Valentia                            | Italy                | IT       |
+| Vicenza                                  | Italy                | IT       |
+| Viterbo                                  | Italy                | IT       |
+| Aichi                                    | Japan                | JP       |
+| Akita                                    | Japan                | JP       |
+| Aomori                                   | Japan                | JP       |
+| Chiba                                    | Japan                | JP       |
+| Ehime                                    | Japan                | JP       |
+| Fukui                                    | Japan                | JP       |
+| Fukuoka                                  | Japan                | JP       |
+| Fukushima                                | Japan                | JP       |
+| Gifu                                     | Japan                | JP       |
+| Gunma                                    | Japan                | JP       |
+| Hiroshima                                | Japan                | JP       |
+| Hokkaidō                                 | Japan                | JP       |
+| Hyōgo                                    | Japan                | JP       |
+| Ibaraki                                  | Japan                | JP       |
+| Ishikawa                                 | Japan                | JP       |
+| Iwate                                    | Japan                | JP       |
+| Kagawa                                   | Japan                | JP       |
+| Kagoshima                                | Japan                | JP       |
+| Kanagawa                                 | Japan                | JP       |
+| Kōchi                                    | Japan                | JP       |
+| Kumamoto                                 | Japan                | JP       |
+| Kyōto                                    | Japan                | JP       |
+| Mie                                      | Japan                | JP       |
+| Miyagi                                   | Japan                | JP       |
+| Miyazaki                                 | Japan                | JP       |
+| Nagano                                   | Japan                | JP       |
+| Nagasaki                                 | Japan                | JP       |
+| Nara                                     | Japan                | JP       |
+| Niigata                                  | Japan                | JP       |
+| Ōita                                     | Japan                | JP       |
+| Okayama                                  | Japan                | JP       |
+| Okinawa                                  | Japan                | JP       |
+| Ōsaka                                    | Japan                | JP       |
+| Saga                                     | Japan                | JP       |
+| Saitama                                  | Japan                | JP       |
+| Shiga                                    | Japan                | JP       |
+| Shimane                                  | Japan                | JP       |
+| Shizuoka                                 | Japan                | JP       |
+| Tochigi                                  | Japan                | JP       |
+| Tokushima                                | Japan                | JP       |
+| Tōkyō                                    | Japan                | JP       |
+| Tottori                                  | Japan                | JP       |
+| Toyama                                   | Japan                | JP       |
+| Wakayama                                 | Japan                | JP       |
+| Yamagata                                 | Japan                | JP       |
+| Yamaguchi                                | Japan                | JP       |
+| Yamanashi                                | Japan                | JP       |
+| Al Ahmadi                                | Kuwait               | KW       |
+| Al Asimah                                | Kuwait               | KW       |
+| Al Farwaniyah                            | Kuwait               | KW       |
+| Al Jahra                                 | Kuwait               | KW       |
+| Hawalli                                  | Kuwait               | KW       |
+| Mubarak Al-Kabeer                        | Kuwait               | KW       |
+| Johor                                    | Malaysia             | MY       |
+| Kedah                                    | Malaysia             | MY       |
+| Kelantan                                 | Malaysia             | MY       |
+| Kuala Lumpur                             | Malaysia             | MY       |
+| Labuan                                   | Malaysia             | MY       |
+| Melaka                                   | Malaysia             | MY       |
+| Negeri Sembilan                          | Malaysia             | MY       |
+| Pahang                                   | Malaysia             | MY       |
+| Penang                                   | Malaysia             | MY       |
+| Perak                                    | Malaysia             | MY       |
+| Perlis                                   | Malaysia             | MY       |
+| Putrajaya                                | Malaysia             | MY       |
+| Sabah                                    | Malaysia             | MY       |
+| Sarawak                                  | Malaysia             | MY       |
+| Selangor                                 | Malaysia             | MY       |
+| Terengganu                               | Malaysia             | MY       |
+| Aguascalientes                           | Mexico               | MX       |
+| Baja California                          | Mexico               | MX       |
+| Baja California Sur                      | Mexico               | MX       |
+| Campeche                                 | Mexico               | MX       |
+| Chiapas                                  | Mexico               | MX       |
+| Chihuahua                                | Mexico               | MX       |
+| Ciudad de México                         | Mexico               | MX       |
+| Coahuila                                 | Mexico               | MX       |
+| Colima                                   | Mexico               | MX       |
+| Durango                                  | Mexico               | MX       |
+| Guanajuato                               | Mexico               | MX       |
+| Guerrero                                 | Mexico               | MX       |
+| Hidalgo                                  | Mexico               | MX       |
+| Jalisco                                  | Mexico               | MX       |
+| México                                   | Mexico               | MX       |
+| Michoacán                                | Mexico               | MX       |
+| Morelos                                  | Mexico               | MX       |
+| Nayarit                                  | Mexico               | MX       |
+| Nuevo León                               | Mexico               | MX       |
+| Oaxaca                                   | Mexico               | MX       |
+| Puebla                                   | Mexico               | MX       |
+| Querétaro                                | Mexico               | MX       |
+| Quintana Roo                             | Mexico               | MX       |
+| San Luis Potosí                          | Mexico               | MX       |
+| Sinaloa                                  | Mexico               | MX       |
+| Sonora                                   | Mexico               | MX       |
+| Tabasco                                  | Mexico               | MX       |
+| Tamaulipas                               | Mexico               | MX       |
+| Tlaxcala                                 | Mexico               | MX       |
+| Veracruz                                 | Mexico               | MX       |
+| Yucatán                                  | Mexico               | MX       |
+| Zacatecas                                | Mexico               | MX       |
+| Auckland                                 | New Zealand          | NZ       |
+| Bay of Plenty                            | New Zealand          | NZ       |
+| Canterbury                               | New Zealand          | NZ       |
+| Chatham Islands                          | New Zealand          | NZ       |
+| Gisborne                                 | New Zealand          | NZ       |
+| Hawke's Bay                              | New Zealand          | NZ       |
+| Manawatu-Wanganui                        | New Zealand          | NZ       |
+| Marlborough                              | New Zealand          | NZ       |
+| Nelson                                   | New Zealand          | NZ       |
+| Northland                                | New Zealand          | NZ       |
+| Otago                                    | New Zealand          | NZ       |
+| Southland                                | New Zealand          | NZ       |
+| Taranaki                                 | New Zealand          | NZ       |
+| Tasman                                   | New Zealand          | NZ       |
+| Waikato                                  | New Zealand          | NZ       |
+| Wellington                               | New Zealand          | NZ       |
+| West Coast                               | New Zealand          | NZ       |
+| Abia                                     | Nigeria              | NG       |
+| Abuja Federal Capital Territory          | Nigeria              | NG       |
+| Adamawa                                  | Nigeria              | NG       |
+| Akwa Ibom                                | Nigeria              | NG       |
+| Anambra                                  | Nigeria              | NG       |
+| Bauchi                                   | Nigeria              | NG       |
+| Bayelsa                                  | Nigeria              | NG       |
+| Benue                                    | Nigeria              | NG       |
+| Borno                                    | Nigeria              | NG       |
+| Cross River                              | Nigeria              | NG       |
+| Delta                                    | Nigeria              | NG       |
+| Ebonyi                                   | Nigeria              | NG       |
+| Edo                                      | Nigeria              | NG       |
+| Ekiti                                    | Nigeria              | NG       |
+| Enugu                                    | Nigeria              | NG       |
+| Gombe                                    | Nigeria              | NG       |
+| Imo                                      | Nigeria              | NG       |
+| Jigawa                                   | Nigeria              | NG       |
+| Kaduna                                   | Nigeria              | NG       |
+| Kano                                     | Nigeria              | NG       |
+| Katsina                                  | Nigeria              | NG       |
+| Kebbi                                    | Nigeria              | NG       |
+| Kogi                                     | Nigeria              | NG       |
+| Kwara                                    | Nigeria              | NG       |
+| Lagos                                    | Nigeria              | NG       |
+| Nasarawa                                 | Nigeria              | NG       |
+| Niger                                    | Nigeria              | NG       |
+| Ogun                                     | Nigeria              | NG       |
+| Ondo                                     | Nigeria              | NG       |
+| Osun                                     | Nigeria              | NG       |
+| Oyo                                      | Nigeria              | NG       |
+| Plateau                                  | Nigeria              | NG       |
+| Rivers                                   | Nigeria              | NG       |
+| Sokoto                                   | Nigeria              | NG       |
+| Taraba                                   | Nigeria              | NG       |
+| Yobe                                     | Nigeria              | NG       |
+| Zamfara                                  | Nigeria              | NG       |
+| Bocas del Toro                           | Panama               | PA       |
+| Chiriquí                                 | Panama               | PA       |
+| Coclé                                    | Panama               | PA       |
+| Colón                                    | Panama               | PA       |
+| Darién                                   | Panama               | PA       |
+| Emberá                                   | Panama               | PA       |
+| Herrera                                  | Panama               | PA       |
+| Kuna Yala                                | Panama               | PA       |
+| Los Santos                               | Panama               | PA       |
+| Ngöbe-Buglé                              | Panama               | PA       |
+| Panamá                                   | Panama               | PA       |
+| Panamá Oeste                             | Panama               | PA       |
+| Veraguas                                 | Panama               | PA       |
+| Amazonas                                 | Peru                 | PE       |
+| Áncash                                   | Peru                 | PE       |
+| Apurímac                                 | Peru                 | PE       |
+| Arequipa                                 | Peru                 | PE       |
+| Ayacucho                                 | Peru                 | PE       |
+| Cajamarca                                | Peru                 | PE       |
+| Callao                                   | Peru                 | PE       |
+| Cuzco                                    | Peru                 | PE       |
+| Huancavelica                             | Peru                 | PE       |
+| Huánuco                                  | Peru                 | PE       |
+| Ica                                      | Peru                 | PE       |
+| Junín                                    | Peru                 | PE       |
+| La Libertad                              | Peru                 | PE       |
+| Lambayeque                               | Peru                 | PE       |
+| Lima (departamento)                      | Peru                 | PE       |
+| Lima (provincia)                         | Peru                 | PE       |
+| Loreto                                   | Peru                 | PE       |
+| Madre de Dios                            | Peru                 | PE       |
+| Moquegua                                 | Peru                 | PE       |
+| Pasco                                    | Peru                 | PE       |
+| Piura                                    | Peru                 | PE       |
+| Puno                                     | Peru                 | PE       |
+| San Martín                               | Peru                 | PE       |
+| Tacna                                    | Peru                 | PE       |
+| Tumbes                                   | Peru                 | PE       |
+| Ucayali                                  | Peru                 | PE       |
+| Abra                                     | Philippines          | PH       |
+| Agusan del Norte                         | Philippines          | PH       |
+| Agusan del Sur                           | Philippines          | PH       |
+| Aklan                                    | Philippines          | PH       |
+| Albay                                    | Philippines          | PH       |
+| Antique                                  | Philippines          | PH       |
+| Apayao                                   | Philippines          | PH       |
+| Aurora                                   | Philippines          | PH       |
+| Basilan                                  | Philippines          | PH       |
+| Bataan                                   | Philippines          | PH       |
+| Batanes                                  | Philippines          | PH       |
+| Batangas                                 | Philippines          | PH       |
+| Benguet                                  | Philippines          | PH       |
+| Biliran                                  | Philippines          | PH       |
+| Bohol                                    | Philippines          | PH       |
+| Bukidnon                                 | Philippines          | PH       |
+| Bulacan                                  | Philippines          | PH       |
+| Cagayan                                  | Philippines          | PH       |
+| Camarines Norte                          | Philippines          | PH       |
+| Camarines Sur                            | Philippines          | PH       |
+| Camiguin                                 | Philippines          | PH       |
+| Capiz                                    | Philippines          | PH       |
+| Catanduanes                              | Philippines          | PH       |
+| Cavite                                   | Philippines          | PH       |
+| Cebu                                     | Philippines          | PH       |
+| Cotabato                                 | Philippines          | PH       |
+| Davao de Oro                             | Philippines          | PH       |
+| Davao del Norte                          | Philippines          | PH       |
+| Davao del Sur                            | Philippines          | PH       |
+| Davao Occidental                         | Philippines          | PH       |
+| Davao Oriental                           | Philippines          | PH       |
+| Dinagat Islands                          | Philippines          | PH       |
+| Eastern Samar                            | Philippines          | PH       |
+| Guimaras                                 | Philippines          | PH       |
+| Ifugao                                   | Philippines          | PH       |
+| Ilocos Norte                             | Philippines          | PH       |
+| Ilocos Sur                               | Philippines          | PH       |
+| Iloilo                                   | Philippines          | PH       |
+| Isabela                                  | Philippines          | PH       |
+| Kalinga                                  | Philippines          | PH       |
+| La Union                                 | Philippines          | PH       |
+| Laguna                                   | Philippines          | PH       |
+| Lanao del Norte                          | Philippines          | PH       |
+| Lanao del Sur                            | Philippines          | PH       |
+| Leyte                                    | Philippines          | PH       |
+| Maguindanao                              | Philippines          | PH       |
+| Marinduque                               | Philippines          | PH       |
+| Masbate                                  | Philippines          | PH       |
+| Metro Manila                             | Philippines          | PH       |
+| Misamis Occidental                       | Philippines          | PH       |
+| Misamis Oriental                         | Philippines          | PH       |
+| Mountain Province                        | Philippines          | PH       |
+| Negros Occidental                        | Philippines          | PH       |
+| Negros Oriental                          | Philippines          | PH       |
+| Northern Samar                           | Philippines          | PH       |
+| Nueva Ecija                              | Philippines          | PH       |
+| Nueva Vizcaya                            | Philippines          | PH       |
+| Occidental Mindoro                       | Philippines          | PH       |
+| Oriental Mindoro                         | Philippines          | PH       |
+| Palawan                                  | Philippines          | PH       |
+| Pampanga                                 | Philippines          | PH       |
+| Pangasinan                               | Philippines          | PH       |
+| Quezon                                   | Philippines          | PH       |
+| Quirino                                  | Philippines          | PH       |
+| Rizal                                    | Philippines          | PH       |
+| Romblon                                  | Philippines          | PH       |
+| Samar                                    | Philippines          | PH       |
+| Sarangani                                | Philippines          | PH       |
+| Siquijor                                 | Philippines          | PH       |
+| Sorsogon                                 | Philippines          | PH       |
+| South Cotabato                           | Philippines          | PH       |
+| Southern Leyte                           | Philippines          | PH       |
+| Sultan Kudarat                           | Philippines          | PH       |
+| Sulu                                     | Philippines          | PH       |
+| Surigao del Norte                        | Philippines          | PH       |
+| Surigao del Sur                          | Philippines          | PH       |
+| Tarlac                                   | Philippines          | PH       |
+| Tawi-Tawi                                | Philippines          | PH       |
+| Zambales                                 | Philippines          | PH       |
+| Zamboanga del Norte                      | Philippines          | PH       |
+| Zamboanga del Sur                        | Philippines          | PH       |
+| Zamboanga Sibugay                        | Philippines          | PH       |
+| Açores                                   | Portugal             | PT       |
+| Aveiro                                   | Portugal             | PT       |
+| Beja                                     | Portugal             | PT       |
+| Braga                                    | Portugal             | PT       |
+| Bragança                                 | Portugal             | PT       |
+| Castelo Branco                           | Portugal             | PT       |
+| Coimbra                                  | Portugal             | PT       |
+| Évora                                    | Portugal             | PT       |
+| Faro                                     | Portugal             | PT       |
+| Guarda                                   | Portugal             | PT       |
+| Leiria                                   | Portugal             | PT       |
+| Lisboa                                   | Portugal             | PT       |
+| Madeira                                  | Portugal             | PT       |
+| Portalegre                               | Portugal             | PT       |
+| Porto                                    | Portugal             | PT       |
+| Santarém                                 | Portugal             | PT       |
+| Setúbal                                  | Portugal             | PT       |
+| Viana do Castelo                         | Portugal             | PT       |
+| Vila Real                                | Portugal             | PT       |
+| Viseu                                    | Portugal             | PT       |
+| Alba                                     | Romania              | RO       |
+| Arad                                     | Romania              | RO       |
+| Argeș                                    | Romania              | RO       |
+| Bacău                                    | Romania              | RO       |
+| Bihor                                    | Romania              | RO       |
+| Bistrița-Năsăud                          | Romania              | RO       |
+| Botoșani                                 | Romania              | RO       |
+| Brăila                                   | Romania              | RO       |
+| Brașov                                   | Romania              | RO       |
+| București                                | Romania              | RO       |
+| Buzău                                    | Romania              | RO       |
+| Călărași                                 | Romania              | RO       |
+| Caraș-Severin                            | Romania              | RO       |
+| Cluj                                     | Romania              | RO       |
+| Constanța                                | Romania              | RO       |
+| Covasna                                  | Romania              | RO       |
+| Dâmbovița                                | Romania              | RO       |
+| Dolj                                     | Romania              | RO       |
+| Galați                                   | Romania              | RO       |
+| Giurgiu                                  | Romania              | RO       |
+| Gorj                                     | Romania              | RO       |
+| Harghita                                 | Romania              | RO       |
+| Hunedoara                                | Romania              | RO       |
+| Ialomița                                 | Romania              | RO       |
+| Iași                                     | Romania              | RO       |
+| Ilfov                                    | Romania              | RO       |
+| Maramureș                                | Romania              | RO       |
+| Mehedinți                                | Romania              | RO       |
+| Mureș                                    | Romania              | RO       |
+| Neamț                                    | Romania              | RO       |
+| Olt                                      | Romania              | RO       |
+| Prahova                                  | Romania              | RO       |
+| Sălaj                                    | Romania              | RO       |
+| Satu Mare                                | Romania              | RO       |
+| Sibiu                                    | Romania              | RO       |
+| Suceava                                  | Romania              | RO       |
+| Teleorman                                | Romania              | RO       |
+| Timiș                                    | Romania              | RO       |
+| Tulcea                                   | Romania              | RO       |
+| Vâlcea                                   | Romania              | RO       |
+| Vaslui                                   | Romania              | RO       |
+| Vrancea                                  | Romania              | RO       |
+| Altai Krai                               | Russia               | RU       |
+| Altai Republic                           | Russia               | RU       |
+| Amur Oblast                              | Russia               | RU       |
+| Arkhangelsk Oblast                       | Russia               | RU       |
+| Astrakhan Oblast                         | Russia               | RU       |
+| Belgorod Oblast                          | Russia               | RU       |
+| Bryansk Oblast                           | Russia               | RU       |
+| Chechen Republic                         | Russia               | RU       |
+| Chelyabinsk Oblast                       | Russia               | RU       |
+| Chukotka Autonomous Okrug                | Russia               | RU       |
+| Chuvash Republic                         | Russia               | RU       |
+| Irkutsk Oblast                           | Russia               | RU       |
+| Ivanovo Oblast                           | Russia               | RU       |
+| Jewish Autonomous Oblast                 | Russia               | RU       |
+| Kabardino-Balkarian Republic             | Russia               | RU       |
+| Kaliningrad Oblast                       | Russia               | RU       |
+| Kaluga Oblast                            | Russia               | RU       |
+| Kamchatka Krai                           | Russia               | RU       |
+| Karachay–Cherkess Republic               | Russia               | RU       |
+| Kemerovo Oblast                          | Russia               | RU       |
+| Khabarovsk Krai                          | Russia               | RU       |
+| Khanty-Mansi Autonomous Okrug            | Russia               | RU       |
+| Kirov Oblast                             | Russia               | RU       |
+| Komi Republic                            | Russia               | RU       |
+| Kostroma Oblast                          | Russia               | RU       |
+| Krasnodar Krai                           | Russia               | RU       |
+| Krasnoyarsk Krai                         | Russia               | RU       |
+| Kurgan Oblast                            | Russia               | RU       |
+| Kursk Oblast                             | Russia               | RU       |
+| Leningrad Oblast                         | Russia               | RU       |
+| Lipetsk Oblast                           | Russia               | RU       |
+| Magadan Oblast                           | Russia               | RU       |
+| Mari El Republic                         | Russia               | RU       |
+| Moscow                                   | Russia               | RU       |
+| Moscow Oblast                            | Russia               | RU       |
+| Murmansk Oblast                          | Russia               | RU       |
+| Nizhny Novgorod Oblast                   | Russia               | RU       |
+| Novgorod Oblast                          | Russia               | RU       |
+| Novosibirsk Oblast                       | Russia               | RU       |
+| Omsk Oblast                              | Russia               | RU       |
+| Orenburg Oblast                          | Russia               | RU       |
+| Oryol Oblast                             | Russia               | RU       |
+| Penza Oblast                             | Russia               | RU       |
+| Perm Krai                                | Russia               | RU       |
+| Primorsky Krai                           | Russia               | RU       |
+| Pskov Oblast                             | Russia               | RU       |
+| Republic of Adygeya                      | Russia               | RU       |
+| Republic of Bashkortostan                | Russia               | RU       |
+| Republic of Buryatia                     | Russia               | RU       |
+| Republic of Dagestan                     | Russia               | RU       |
+| Republic of Ingushetia                   | Russia               | RU       |
+| Republic of Kalmykia                     | Russia               | RU       |
+| Republic of Karelia                      | Russia               | RU       |
+| Republic of Khakassia                    | Russia               | RU       |
+| Republic of Mordovia                     | Russia               | RU       |
+| Republic of North Ossetia–Alania         | Russia               | RU       |
+| Republic of Tatarstan                    | Russia               | RU       |
+| Rostov Oblast                            | Russia               | RU       |
+| Ryazan Oblast                            | Russia               | RU       |
+| Saint Petersburg                         | Russia               | RU       |
+| Sakha Republic (Yakutia)                 | Russia               | RU       |
+| Sakhalin Oblast                          | Russia               | RU       |
+| Samara Oblast                            | Russia               | RU       |
+| Saratov Oblast                           | Russia               | RU       |
+| Smolensk Oblast                          | Russia               | RU       |
+| Stavropol Krai                           | Russia               | RU       |
+| Sverdlovsk Oblast                        | Russia               | RU       |
+| Tambov Oblast                            | Russia               | RU       |
+| Tomsk Oblast                             | Russia               | RU       |
+| Tula Oblast                              | Russia               | RU       |
+| Tver Oblast                              | Russia               | RU       |
+| Tyumen Oblast                            | Russia               | RU       |
+| Tyva Republic                            | Russia               | RU       |
+| Udmurtia                                 | Russia               | RU       |
+| Ulyanovsk Oblast                         | Russia               | RU       |
+| Vladimir Oblast                          | Russia               | RU       |
+| Volgograd Oblast                         | Russia               | RU       |
+| Vologda Oblast                           | Russia               | RU       |
+| Voronezh Oblast                          | Russia               | RU       |
+| Yamalo-Nenets Autonomous Okrug           | Russia               | RU       |
+| Yaroslavl Oblast                         | Russia               | RU       |
+| Zabaykalsky Krai                         | Russia               | RU       |
+| Eastern Cape                             | South Africa         | ZA       |
+| Free State                               | South Africa         | ZA       |
+| Gauteng                                  | South Africa         | ZA       |
+| KwaZulu-Natal                            | South Africa         | ZA       |
+| Limpopo                                  | South Africa         | ZA       |
+| Mpumalanga                               | South Africa         | ZA       |
+| North West                               | South Africa         | ZA       |
+| Northern Cape                            | South Africa         | ZA       |
+| Western Cape                             | South Africa         | ZA       |
+| Busan                                    | South Korea          | KR       |
+| Chungbuk                                 | South Korea          | KR       |
+| Chungnam                                 | South Korea          | KR       |
+| Daegu                                    | South Korea          | KR       |
+| Daejeon                                  | South Korea          | KR       |
+| Gangwon                                  | South Korea          | KR       |
+| Gwangju                                  | South Korea          | KR       |
+| Gyeongbuk                                | South Korea          | KR       |
+| Gyeonggi                                 | South Korea          | KR       |
+| Gyeongnam                                | South Korea          | KR       |
+| Incheon                                  | South Korea          | KR       |
+| Jeju                                     | South Korea          | KR       |
+| Jeonbuk                                  | South Korea          | KR       |
+| Jeonnam                                  | South Korea          | KR       |
+| Sejong                                   | South Korea          | KR       |
+| Seoul                                    | South Korea          | KR       |
+| Ulsan                                    | South Korea          | KR       |
+| A Coruña                                 | Spain                | ES       |
+| Álava                                    | Spain                | ES       |
+| Albacete                                 | Spain                | ES       |
+| Alicante                                 | Spain                | ES       |
+| Almería                                  | Spain                | ES       |
+| Asturias                                 | Spain                | ES       |
+| Ávila                                    | Spain                | ES       |
+| Badajoz                                  | Spain                | ES       |
+| Balears                                  | Spain                | ES       |
+| Barcelona                                | Spain                | ES       |
+| Burgos                                   | Spain                | ES       |
+| Cáceres                                  | Spain                | ES       |
+| Cádiz                                    | Spain                | ES       |
+| Cantabria                                | Spain                | ES       |
+| Castellón                                | Spain                | ES       |
+| Ceuta                                    | Spain                | ES       |
+| Ciudad Real                              | Spain                | ES       |
+| Córdoba                                  | Spain                | ES       |
+| Cuenca                                   | Spain                | ES       |
+| Girona                                   | Spain                | ES       |
+| Granada                                  | Spain                | ES       |
+| Guadalajara                              | Spain                | ES       |
+| Guipúzcoa                                | Spain                | ES       |
+| Huelva                                   | Spain                | ES       |
+| Huesca                                   | Spain                | ES       |
+| Jaén                                     | Spain                | ES       |
+| La Rioja                                 | Spain                | ES       |
+| Las Palmas                               | Spain                | ES       |
+| León                                     | Spain                | ES       |
+| Lleida                                   | Spain                | ES       |
+| Lugo                                     | Spain                | ES       |
+| Madrid                                   | Spain                | ES       |
+| Málaga                                   | Spain                | ES       |
+| Melilla                                  | Spain                | ES       |
+| Murcia                                   | Spain                | ES       |
+| Navarra                                  | Spain                | ES       |
+| Ourense                                  | Spain                | ES       |
+| Palencia                                 | Spain                | ES       |
+| Pontevedra                               | Spain                | ES       |
+| Salamanca                                | Spain                | ES       |
+| Santa Cruz de Tenerife                   | Spain                | ES       |
+| Segovia                                  | Spain                | ES       |
+| Sevilla                                  | Spain                | ES       |
+| Soria                                    | Spain                | ES       |
+| Tarragona                                | Spain                | ES       |
+| Teruel                                   | Spain                | ES       |
+| Toledo                                   | Spain                | ES       |
+| Valencia                                 | Spain                | ES       |
+| Valladolid                               | Spain                | ES       |
+| Vizcaya                                  | Spain                | ES       |
+| Zamora                                   | Spain                | ES       |
+| Zaragoza                                 | Spain                | ES       |
+| Amnat Charoen                            | Thailand             | TH       |
+| Ang Thong                                | Thailand             | TH       |
+| Bangkok                                  | Thailand             | TH       |
+| Bueng Kan                                | Thailand             | TH       |
+| Buriram                                  | Thailand             | TH       |
+| Chachoengsao                             | Thailand             | TH       |
+| Chai Nat                                 | Thailand             | TH       |
+| Chaiyaphum                               | Thailand             | TH       |
+| Chanthaburi                              | Thailand             | TH       |
+| Chiang Mai                               | Thailand             | TH       |
+| Chiang Rai                               | Thailand             | TH       |
+| Chon Buri                                | Thailand             | TH       |
+| Chumphon                                 | Thailand             | TH       |
+| Kalasin                                  | Thailand             | TH       |
+| Kamphaeng Phet                           | Thailand             | TH       |
+| Kanchanaburi                             | Thailand             | TH       |
+| Khon Kaen                                | Thailand             | TH       |
+| Krabi                                    | Thailand             | TH       |
+| Lampang                                  | Thailand             | TH       |
+| Lamphun                                  | Thailand             | TH       |
+| Loei                                     | Thailand             | TH       |
+| Lopburi                                  | Thailand             | TH       |
+| Mae Hong Son                             | Thailand             | TH       |
+| Maha Sarakham                            | Thailand             | TH       |
+| Mukdahan                                 | Thailand             | TH       |
+| Nakhon Nayok                             | Thailand             | TH       |
+| Nakhon Pathom                            | Thailand             | TH       |
+| Nakhon Phanom                            | Thailand             | TH       |
+| Nakhon Ratchasima                        | Thailand             | TH       |
+| Nakhon Sawan                             | Thailand             | TH       |
+| Nakhon Si Thammarat                      | Thailand             | TH       |
+| Nan                                      | Thailand             | TH       |
+| Narathiwat                               | Thailand             | TH       |
+| Nong Bua Lam Phu                         | Thailand             | TH       |
+| Nong Khai                                | Thailand             | TH       |
+| Nonthaburi                               | Thailand             | TH       |
+| Pathum Thani                             | Thailand             | TH       |
+| Pattani                                  | Thailand             | TH       |
+| Pattaya                                  | Thailand             | TH       |
+| Phangnga                                 | Thailand             | TH       |
+| Phatthalung                              | Thailand             | TH       |
+| Phayao                                   | Thailand             | TH       |
+| Phetchabun                               | Thailand             | TH       |
+| Phetchaburi                              | Thailand             | TH       |
+| Phichit                                  | Thailand             | TH       |
+| Phitsanulok                              | Thailand             | TH       |
+| Phra Nakhon Si Ayutthaya                 | Thailand             | TH       |
+| Phrae                                    | Thailand             | TH       |
+| Phuket                                   | Thailand             | TH       |
+| Prachin Buri                             | Thailand             | TH       |
+| Prachuap Khiri Khan                      | Thailand             | TH       |
+| Ranong                                   | Thailand             | TH       |
+| Ratchaburi                               | Thailand             | TH       |
+| Rayong                                   | Thailand             | TH       |
+| Roi Et                                   | Thailand             | TH       |
+| Sa Kaeo                                  | Thailand             | TH       |
+| Sakon Nakhon                             | Thailand             | TH       |
+| Samut Prakan                             | Thailand             | TH       |
+| Samut Sakhon                             | Thailand             | TH       |
+| Samut Songkhram                          | Thailand             | TH       |
+| Saraburi                                 | Thailand             | TH       |
+| Satun                                    | Thailand             | TH       |
+| Sing Buri                                | Thailand             | TH       |
+| Sisaket                                  | Thailand             | TH       |
+| Songkhla                                 | Thailand             | TH       |
+| Sukhothai                                | Thailand             | TH       |
+| Suphan Buri                              | Thailand             | TH       |
+| Surat Thani                              | Thailand             | TH       |
+| Surin                                    | Thailand             | TH       |
+| Tak                                      | Thailand             | TH       |
+| Trang                                    | Thailand             | TH       |
+| Trat                                     | Thailand             | TH       |
+| Ubon Ratchathani                         | Thailand             | TH       |
+| Udon Thani                               | Thailand             | TH       |
+| Uthai Thani                              | Thailand             | TH       |
+| Uttaradit                                | Thailand             | TH       |
+| Yala                                     | Thailand             | TH       |
+| Yasothon                                 | Thailand             | TH       |
+| Abu Dhabi                                | United Arab Emirates | AE       |
+| Ajman                                    | United Arab Emirates | AE       |
+| Dubai                                    | United Arab Emirates | AE       |
+| Fujairah                                 | United Arab Emirates | AE       |
+| Ras al-Khaimah                           | United Arab Emirates | AE       |
+| Sharjah                                  | United Arab Emirates | AE       |
+| Umm al-Quwain                            | United Arab Emirates | AE       |
+| British Forces                           | United Kingdom       | GB       |
+| England                                  | United Kingdom       | GB       |
+| Northern Ireland                         | United Kingdom       | GB       |
+| Scotland                                 | United Kingdom       | GB       |
+| Wales                                    | United Kingdom       | GB       |
+| Alabama                                  | United States        | US       |
+| Alaska                                   | United States        | US       |
+| American Samoa                           | United States        | US       |
+| Arizona                                  | United States        | US       |
+| Arkansas                                 | United States        | US       |
+| Armed Forces Americas                    | United States        | US       |
+| Armed Forces Europe                      | United States        | US       |
+| Armed Forces Pacific                     | United States        | US       |
+| California                               | United States        | US       |
+| Colorado                                 | United States        | US       |
+| Connecticut                              | United States        | US       |
+| Delaware                                 | United States        | US       |
+| District of Columbia                     | United States        | US       |
+| Federated States of Micronesia           | United States        | US       |
+| Florida                                  | United States        | US       |
+| Georgia                                  | United States        | US       |
+| Guam                                     | United States        | US       |
+| Hawaii                                   | United States        | US       |
+| Idaho                                    | United States        | US       |
+| Illinois                                 | United States        | US       |
+| Indiana                                  | United States        | US       |
+| Iowa                                     | United States        | US       |
+| Kansas                                   | United States        | US       |
+| Kentucky                                 | United States        | US       |
+| Louisiana                                | United States        | US       |
+| Maine                                    | United States        | US       |
+| Marshall Islands                         | United States        | US       |
+| Maryland                                 | United States        | US       |
+| Massachusetts                            | United States        | US       |
+| Michigan                                 | United States        | US       |
+| Minnesota                                | United States        | US       |
+| Mississippi                              | United States        | US       |
+| Missouri                                 | United States        | US       |
+| Montana                                  | United States        | US       |
+| Nebraska                                 | United States        | US       |
+| Nevada                                   | United States        | US       |
+| New Hampshire                            | United States        | US       |
+| New Jersey                               | United States        | US       |
+| New Mexico                               | United States        | US       |
+| New York                                 | United States        | US       |
+| North Carolina                           | United States        | US       |
+| North Dakota                             | United States        | US       |
+| Northern Mariana Islands                 | United States        | US       |
+| Ohio                                     | United States        | US       |
+| Oklahoma                                 | United States        | US       |
+| Oregon                                   | United States        | US       |
+| Palau                                    | United States        | US       |
+| Pennsylvania                             | United States        | US       |
+| Puerto Rico                              | United States        | US       |
+| Rhode Island                             | United States        | US       |
+| South Carolina                           | United States        | US       |
+| South Dakota                             | United States        | US       |
+| Tennessee                                | United States        | US       |
+| Texas                                    | United States        | US       |
+| Utah                                     | United States        | US       |
+| Vermont                                  | United States        | US       |
+| Virgin Islands                           | United States        | US       |
+| Virginia                                 | United States        | US       |
+| Washington                               | United States        | US       |
+| West Virginia                            | United States        | US       |
+| Wisconsin                                | United States        | US       |
+| Wyoming                                  | United States        | US       |
+| Artigas                                  | Uruguay              | UY       |
+| Canelones                                | Uruguay              | UY       |
+| Cerro Largo                              | Uruguay              | UY       |
+| Colonia                                  | Uruguay              | UY       |
+| Durazno                                  | Uruguay              | UY       |
+| Flores                                   | Uruguay              | UY       |
+| Florida                                  | Uruguay              | UY       |
+| Lavalleja                                | Uruguay              | UY       |
+| Maldonado                                | Uruguay              | UY       |
+| Montevideo                               | Uruguay              | UY       |
+| Paysandú                                 | Uruguay              | UY       |
+| Río Negro                                | Uruguay              | UY       |
+| Rivera                                   | Uruguay              | UY       |
+| Rocha                                    | Uruguay              | UY       |
+| Salto                                    | Uruguay              | UY       |
+| San José                                 | Uruguay              | UY       |
+| Soriano                                  | Uruguay              | UY       |
+| Tacuarembó                               | Uruguay              | UY       |
+| Treinta y Tres                           | Uruguay              | UY       |
+| Amazonas                                 | Venezuela            | VE       |
+| Anzoátegui                               | Venezuela            | VE       |
+| Apure                                    | Venezuela            | VE       |
+| Aragua                                   | Venezuela            | VE       |
+| Barinas                                  | Venezuela            | VE       |
+| Bolívar                                  | Venezuela            | VE       |
+| Carabobo                                 | Venezuela            | VE       |
+| Cojedes                                  | Venezuela            | VE       |
+| Delta Amacuro                            | Venezuela            | VE       |
+| Dependencias Federales                   | Venezuela            | VE       |
+| Distrito Capital                         | Venezuela            | VE       |
+| Falcón                                   | Venezuela            | VE       |
+| Guárico                                  | Venezuela            | VE       |
+| La Guaira                                | Venezuela            | VE       |
+| Lara                                     | Venezuela            | VE       |
+| Mérida                                   | Venezuela            | VE       |
+| Miranda                                  | Venezuela            | VE       |
+| Monagas                                  | Venezuela            | VE       |
+| Nueva Esparta                            | Venezuela            | VE       |
+| Portuguesa                               | Venezuela            | VE       |
+| Sucre                                    | Venezuela            | VE       |
+| Táchira                                  | Venezuela            | VE       |
+| Trujillo                                 | Venezuela            | VE       |
+| Yaracuy                                  | Venezuela            | VE       |
+| Zulia                                    | Venezuela            | VE       |
+</Accordion>
 
 ### Postcode
 The postal or ZIP code. You can enter a specific code (like "90210") or use patterns:
