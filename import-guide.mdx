@@ -3,4 +3,66 @@ title: "Import Guide"
 description: "How to upload a rate table CSV to MatrixRates."
 ---
 
-This guide is coming soon.
+Importing a rate table is the fastest way to set up or update your shipping rates. Instead of entering rates one by one in Shopify, you can upload hundreds of rates at once using a CSV file.
+
+## Before You Import
+
+<Warning>
+**Important:** Importing a CSV file will **overwrite** all existing rates in the selected shipping zone. Always [export a backup](/export-guide) of your current rates before importing a new file.
+</Warning>
+
+Before you start, make sure your CSV file is formatted correctly. MatrixRates is very strict about column names and values.
+
+- Review the [CSV Reference](/csv-reference) for required columns and data types.
+- Ensure your file is saved as a **.csv** (Comma Separated Values) file.
+- Check that your Zone names match the zones you have created in the MatrixRates app.
+
+## The Import Process
+
+Follow these steps to upload your rate table to Shopify.
+
+<Steps>
+  <Step title="Open MatrixRates">
+    Log in to your Shopify Admin and navigate to **Apps** > **MatrixRates Import/Export**.
+  </Step>
+  <Step title="Navigate to Import">
+    Click on the **Import** tab in the top navigation menu of the app.
+  </Step>
+  <Step title="Select your CSV file">
+    Click the **Choose File** button and select the CSV file from your computer.
+    <Frame>
+      <div className="bg-slate-100 p-8 rounded-lg border border-slate-200 text-center text-slate-500">
+        [Screenshot: Import screen showing the file picker]
+      </div>
+    </Frame>
+  </Step>
+  <Step title="Upload and Import">
+    Click the **Upload and Import** button. The app will begin processing your file.
+  </Step>
+  <Step title="Wait for Confirmation">
+    Once the import is complete, you will see a success message showing how many rates were imported. If there are errors, they will be listed row-by-row.
+  </Step>
+</Steps>
+
+## Verifying the Import
+
+After a successful import, it's good practice to verify that your rates are correctly loaded into Shopify.
+
+1. Go to **Settings** > **Shipping and delivery** in your Shopify Admin.
+2. Find the **General shipping rates** section and click **Manage**.
+3. Scroll down to your shipping zones. You should see the rates you just imported listed under the corresponding zones.
+4. (Optional) Use the **Calculate shipping** tool in the Shopify Admin to test specific addresses and order values.
+
+## What to do next
+
+<CardGroup cols={3}>
+  <Card title="Test your rates" icon="flask">
+    Add items to your cart and go to checkout to see your new rates in action.
+  </Card>
+  <Card title="Troubleshoot errors" icon="circle-exclamation" href="/troubleshooting">
+    Getting an error message? Learn how to fix common import issues.
+  </Card>
+  <Card title="Export a backup" icon="file-export" href="/export-guide">
+    Keep a copy of your rates on your computer for safekeeping.
+  </Card>
+</CardGroup>
