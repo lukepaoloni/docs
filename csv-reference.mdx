@@ -1,9 +1,9 @@
 ---
-title: "CSV Reference"
-description: "Column-by-column reference for the MatrixRates CSV format."
+title: "Spreadsheet Reference"
+description: "Column-by-column reference for the MatrixRates spreadsheet format."
 ---
 
-This page explains every column in your rate table CSV file. Use it to understand what each column means, what values to enter, and how to handle special cases.
+This page explains every column in your rate table spreadsheet file. Use it to understand what each column means, what values to enter, and how to handle special cases.
 
 ## Column reference table
 
@@ -17,10 +17,10 @@ This page explains every column in your rate table CSV file. Use it to understan
 | Name | Text | Yes | A short name for this rate | "Standard Shipping" |
 | Description | Text | No | What the merchant sees at checkout | "Delivery in 3-7 days" |
 | Price | Number | Yes | Price in your store currency | 9.99 |
-| Order Subtotal >= | Number | No | Minimum order value to qualify (in cents) | 0 |
-| Order Subtotal <= | Number | No | Maximum order value to qualify (in cents) | 10000 |
-| Weight >= | Number | No | Minimum weight in grams | 0 |
-| Weight <= | Number | No | Maximum weight in grams | 5000 |
+| Order Subtotal \>= | Number | No | Minimum order value to qualify (in cents) | 0 |
+| Order Subtotal \<= | Number | No | Maximum order value to qualify (in cents) | 10000 |
+| Weight \>= | Number | No | Minimum weight in grams | 0 |
+| Weight \<= | Number | No | Maximum weight in grams | 5000 |
 | Transit Time Min Days | Number | No | Minimum delivery days | 3 |
 | Transit Time Max Days | Number | No | Maximum delivery days | 7 |
 
@@ -30,16 +30,249 @@ This page explains every column in your rate table CSV file. Use it to understan
 The shipping zone this rate applies to. This must match a zone you've already created in the MatrixRates app. If the zone name doesn't exist, the import will fail.
 
 ### Country Code
-The two-letter code for the destination country. Use standard ISO codes:
+The two-letter code for the destination country. Use standard ISO codes.
 
-- **US** — United States
-- **GB** — United Kingdom
-- **FR** — France
-- **DE** — Germany
-- **CA** — Canada
-- **AU** — Australia
-
-For a full list, search online for "ISO 3166-1 alpha-2 country codes".
+<Accordion title="See supported country codes">
+| Country Name                                 | Country Code |
+|----------------------------------------------|----------|
+| Afghanistan                                  | AF       |
+| Aland Islands                                | AX       |
+| Albania                                      | AL       |
+| Algeria                                      | DZ       |
+| Andorra                                      | AD       |
+| Angola                                       | AO       |
+| Anguilla                                     | AI       |
+| Antigua And Barbuda                          | AG       |
+| Argentina                                    | AR       |
+| Armenia                                      | AM       |
+| Aruba                                        | AW       |
+| Ascension Island                             | AC       |
+| Australia                                    | AU       |
+| Austria                                      | AT       |
+| Azerbaijan                                   | AZ       |
+| Bahamas                                      | BS       |
+| Bahrain                                      | BH       |
+| Bangladesh                                   | BD       |
+| Barbados                                     | BB       |
+| Belarus                                      | BY       |
+| Belgium                                      | BE       |
+| Belize                                       | BZ       |
+| Benin                                        | BJ       |
+| Bermuda                                      | BM       |
+| Bhutan                                       | BT       |
+| Bolivia                                      | BO       |
+| Bosnia And Herzegovina                       | BA       |
+| Botswana                                     | BW       |
+| Brazil                                       | BR       |
+| British Indian Ocean Territory               | IO       |
+| Brunei                                       | BN       |
+| Bulgaria                                     | BG       |
+| Burkina Faso                                 | BF       |
+| Burundi                                      | BI       |
+| Cambodia                                     | KH       |
+| Canada                                       | CA       |
+| Cape Verde                                   | CV       |
+| Caribbean Netherlands                        | BQ       |
+| Cayman Islands                               | KY       |
+| Central African Republic                     | CF       |
+| Chad                                         | TD       |
+| Chile                                        | CL       |
+| China                                        | CN       |
+| Christmas Island                             | CX       |
+| Cocos (Keeling) Islands                      | CC       |
+| Colombia                                     | CO       |
+| Comoros                                      | KM       |
+| Congo                                        | CG       |
+| Congo, The Democratic Republic Of The        | CD       |
+| Cook Islands                                 | CK       |
+| Costa Rica                                   | CR       |
+| Côte d'Ivoire                                | CI       |
+| Croatia                                      | HR       |
+| Curaçao                                      | CW       |
+| Cyprus                                       | CY       |
+| Czech Republic                               | CZ       |
+| Denmark                                      | DK       |
+| Djibouti                                     | DJ       |
+| Dominica                                     | DM       |
+| Dominican Republic                           | DO       |
+| Ecuador                                      | EC       |
+| Egypt                                        | EG       |
+| El Salvador                                  | SV       |
+| Equatorial Guinea                            | GQ       |
+| Eritrea                                      | ER       |
+| Estonia                                      | EE       |
+| Eswatini                                     | SZ       |
+| Ethiopia                                     | ET       |
+| Falkland Islands (Malvinas)                  | FK       |
+| Faroe Islands                                | FO       |
+| Fiji                                         | FJ       |
+| Finland                                      | FI       |
+| France                                       | FR       |
+| French Guiana                                | GF       |
+| French Polynesia                             | PF       |
+| French Southern Territories                  | TF       |
+| Gabon                                        | GA       |
+| Gambia                                       | GM       |
+| Georgia                                      | GE       |
+| Germany                                      | DE       |
+| Ghana                                        | GH       |
+| Gibraltar                                    | GI       |
+| Greece                                       | GR       |
+| Greenland                                    | GL       |
+| Grenada                                      | GD       |
+| Guadeloupe                                   | GP       |
+| Guatemala                                    | GT       |
+| Guernsey                                     | GG       |
+| Guinea                                       | GN       |
+| Guinea Bissau                                | GW       |
+| Guyana                                       | GY       |
+| Haiti                                        | HT       |
+| Holy See (Vatican City State)                | VA       |
+| Honduras                                     | HN       |
+| Hong Kong                                    | HK       |
+| Hungary                                      | HU       |
+| Iceland                                      | IS       |
+| India                                        | IN       |
+| Indonesia                                    | ID       |
+| Iraq                                         | IQ       |
+| Ireland                                      | IE       |
+| Isle Of Man                                  | IM       |
+| Israel                                       | IL       |
+| Italy                                        | IT       |
+| Jamaica                                      | JM       |
+| Japan                                        | JP       |
+| Jersey                                       | JE       |
+| Jordan                                       | JO       |
+| Kazakhstan                                   | KZ       |
+| Kenya                                        | KE       |
+| Kiribati                                     | KI       |
+| Kosovo                                       | XK       |
+| Kuwait                                       | KW       |
+| Kyrgyzstan                                   | KG       |
+| Lao People's Democratic Republic             | LA       |
+| Latvia                                       | LV       |
+| Lebanon                                      | LB       |
+| Lesotho                                      | LS       |
+| Liberia                                      | LR       |
+| Libyan Arab Jamahiriya                       | LY       |
+| Liechtenstein                                | LI       |
+| Lithuania                                    | LT       |
+| Luxembourg                                   | LU       |
+| Macao                                        | MO       |
+| Madagascar                                   | MG       |
+| Malawi                                       | MW       |
+| Malaysia                                     | MY       |
+| Maldives                                     | MV       |
+| Mali                                         | ML       |
+| Malta                                        | MT       |
+| Martinique                                   | MQ       |
+| Mauritania                                   | MR       |
+| Mauritius                                    | MU       |
+| Mayotte                                      | YT       |
+| Mexico                                       | MX       |
+| Moldova, Republic of                         | MD       |
+| Monaco                                       | MC       |
+| Mongolia                                     | MN       |
+| Montenegro                                   | ME       |
+| Montserrat                                   | MS       |
+| Morocco                                      | MA       |
+| Mozambique                                   | MZ       |
+| Myanmar                                      | MM       |
+| Namibia                                      | NA       |
+| Nauru                                        | NR       |
+| Nepal                                        | NP       |
+| Netherlands                                  | NL       |
+| New Caledonia                                | NC       |
+| New Zealand                                  | NZ       |
+| Nicaragua                                    | NI       |
+| Niger                                        | NE       |
+| Nigeria                                      | NG       |
+| Niue                                         | NU       |
+| Norfolk Island                               | NF       |
+| North Macedonia                              | MK       |
+| Norway                                       | NO       |
+| Oman                                         | OM       |
+| Pakistan                                     | PK       |
+| Palestinian Territory, Occupied              | PS       |
+| Panama                                       | PA       |
+| Papua New Guinea                             | PG       |
+| Paraguay                                     | PY       |
+| Peru                                         | PE       |
+| Philippines                                  | PH       |
+| Pitcairn                                     | PN       |
+| Poland                                       | PL       |
+| Portugal                                     | PT       |
+| Qatar                                        | QA       |
+| Republic of Cameroon                         | CM       |
+| Reunion                                      | RE       |
+| Romania                                      | RO       |
+| Russia                                       | RU       |
+| Rwanda                                       | RW       |
+| Saint Barthélemy                             | BL       |
+| Saint Helena                                 | SH       |
+| Saint Kitts And Nevis                        | KN       |
+| Saint Lucia                                  | LC       |
+| Saint Martin                                 | MF       |
+| Saint Pierre And Miquelon                    | PM       |
+| Samoa                                        | WS       |
+| San Marino                                   | SM       |
+| Sao Tome And Principe                        | ST       |
+| Saudi Arabia                                 | SA       |
+| Senegal                                      | SN       |
+| Serbia                                       | RS       |
+| Seychelles                                   | SC       |
+| Sierra Leone                                 | SL       |
+| Singapore                                    | SG       |
+| Sint Maarten                                 | SX       |
+| Slovakia                                     | SK       |
+| Slovenia                                     | SI       |
+| Solomon Islands                              | SB       |
+| Somalia                                      | SO       |
+| South Africa                                 | ZA       |
+| South Georgia And The South Sandwich Islands | GS       |
+| South Korea                                  | KR       |
+| South Sudan                                  | SS       |
+| Spain                                        | ES       |
+| Sri Lanka                                    | LK       |
+| St. Vincent                                  | VC       |
+| Sudan                                        | SD       |
+| Suriname                                     | SR       |
+| Svalbard And Jan Mayen                       | SJ       |
+| Sweden                                       | SE       |
+| Switzerland                                  | CH       |
+| Taiwan                                       | TW       |
+| Tajikistan                                   | TJ       |
+| Tanzania, United Republic Of                 | TZ       |
+| Thailand                                     | TH       |
+| Timor Leste                                  | TL       |
+| Togo                                         | TG       |
+| Tokelau                                      | TK       |
+| Tonga                                        | TO       |
+| Trinidad and Tobago                          | TT       |
+| Tristan da Cunha                             | TA       |
+| Tunisia                                      | TN       |
+| Turkey                                       | TR       |
+| Turkmenistan                                 | TM       |
+| Turks and Caicos Islands                     | TC       |
+| Tuvalu                                       | TV       |
+| Uganda                                       | UG       |
+| Ukraine                                      | UA       |
+| United Arab Emirates                         | AE       |
+| United Kingdom                               | GB       |
+| United States                                | US       |
+| United States Minor Outlying Islands         | UM       |
+| Uruguay                                      | UY       |
+| Uzbekistan                                   | UZ       |
+| Vanuatu                                      | VU       |
+| Venezuela                                    | VE       |
+| Vietnam                                      | VN       |
+| Virgin Islands, British                      | VG       |
+| Wallis And Futuna                            | WF       |
+| Western Sahara                               | EH       |
+| Yemen                                        | YE       |
+| Zambia                                       | ZM       |
+| Zimbabwe                                     | ZW       |
+</Accordion>
 
 ### Province
 The state, province, or region within a country. Enter the code (like "CA" for California or "NY" for New York). Leave blank if you want the rate to apply to all provinces in the country.
@@ -67,20 +300,20 @@ The shipping price in your store currency. Enter the amount (like 9.99), not in 
 A price of **0** means free shipping for those orders that match the conditions.
 </Note>
 
-### Order Subtotal >= and <=
+### Order Subtotal \>= and \<=
 The minimum and maximum order values (in your store currency) to qualify for this rate. For example:
 
-- **Order Subtotal >= 0** and **Order Subtotal <= 10000** = orders from $0 to $100
+- **Order Subtotal \>= 0** and **Order Subtotal \<= 10000** = orders from $0 to $100
 - Leave both blank = no minimum order requirement
-- Leave **Order Subtotal <=** blank = no maximum limit
+- Leave **Order Subtotal \<=** blank = no maximum limit
 
 Prices are entered in regular amounts (9.99), not cents.
 
-### Weight >= and <=
+### Weight \>= and \<=
 The minimum and maximum weight in grams to qualify for this rate. For example:
 
-- **Weight >= 0** and **Weight <= 500** = packages up to 500g (0.5kg)
-- **Weight >= 500** and **Weight <= 1000** = packages from 500g to 1kg
+- **Weight \>= 0** and **Weight \<= 500** = packages up to 500g (0.5kg)
+- **Weight \>= 500** and **Weight \<= 1000** = packages from 500g to 1kg
 
 <Tip>
 Need to work in kilograms? Multiply by 1000. 1kg = 1000g.
@@ -142,7 +375,7 @@ When the minimum weight is 0, the rate applies to all packages from 0 grams up t
 ### Consecutive weight ranges
 For complete coverage, create overlapping ranges like this:
 
-| Weight >= | Weight <= |
+| Weight \>= | Weight \<= |
 |-----------|------------|
 | 0 | 500 |
 | 500 | 1000 |
@@ -157,12 +390,12 @@ If you leave Province, Postcode, or City blank, the rate applies to the entire c
 
 **What happens:** The rate becomes the default for that country — any order from that country uses this rate unless a more specific match exists.
 
-**What to do:** Put your most general rate (the cheapest or slowest option) last in your CSV so specific rates take priority.
+**What to do:** Put your most general rate (the cheapest or slowest option) last in your file so specific rates take priority.
 
 ## Download sample
 
 <Tip>
-[D Download sample-rates.csv](/sample-rates.csv) — A working example you can edit and import.
+[Download sample-rates.csv](/sample-rates.csv) — A working example you can edit and import.
 </Tip>
 
 ## Next steps
