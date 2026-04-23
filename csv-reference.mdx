@@ -7,22 +7,22 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 
 ## Column reference table
 
-| Column | Type | Required | Available On | Accepted values | Example |
-|--------|------|----------|--------------|-----------------|---------|
-| Zone | Text | Yes | All Plans | Any zone name you've set up in Shopify | "US Standard" |
-| Country Code | Text | Yes | All Plans | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
-| Province | Text | No | All Plans | Full state or province name (California, Ontario) or leave blank | "California" |
-| Postcode | Text | No | Growth, Scale | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
-| City | Text | No | Growth, Scale | City name or leave blank | "New York" |
-| Name | Text | Yes | All Plans | A short name for this rate | "Standard Shipping" |
-| Description | Text | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
-| Price | Number | Yes | All Plans | Price in your store currency | 9.99 |
-| Order Subtotal \>= | Number | No | All Plans | Minimum order value to qualify (in cents) | 0 |
-| Order Subtotal \<= | Number | No | All Plans | Maximum order value to qualify (in cents) | 10000 |
-| Weight \>= | Number | No | All Plans | Minimum weight in grams | 0 |
-| Weight \<= | Number | No | All Plans | Maximum weight in grams | 5000 |
-| Transit Time Min Days | Number | No | All Plans | Minimum delivery days | 3 |
-| Transit Time Max Days | Number | No | All Plans | Maximum delivery days | 7 |
+| Column | Required | Available On | Accepted values | Example |
+|--------|----------|--------------|-----------------|---------|
+| Zone | Yes | All Plans | Any zone name you've set up in Shopify | "US Standard" |
+| Country Code | Yes | All Plans | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
+| Province | No | All Plans | Full state or province name (California, Ontario) or leave blank | "California" |
+| Postcode | No | Growth, Scale | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
+| City | No | Growth, Scale | City name or leave blank | "New York" |
+| Name | Yes | All Plans | A short name for this rate | "Standard Shipping" |
+| Description | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
+| Price | Yes | All Plans | Price in your store currency | 9.99 |
+| Order Subtotal \>= | No | All Plans | Minimum order value to qualify (in cents) | 0 |
+| Order Subtotal \<= | No | All Plans | Maximum order value to qualify (in cents) | 10000 |
+| Weight \>= | No | All Plans | Minimum weight in grams | 0 |
+| Weight \<= | No | All Plans | Maximum weight in grams | 5000 |
+| Transit Time Min Days | No | All Plans | Minimum delivery days | 3 |
+| Transit Time Max Days | No | All Plans | Maximum delivery days | 7 |
 
 ## What each column means
 
