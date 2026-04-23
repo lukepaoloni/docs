@@ -12,7 +12,7 @@
 
 - [x] **Phase 1: Site Rebrand & Scaffold** — Strip Mintlify starter kit, apply MatrixRates branding, and lock URL structure atomically
 - [x] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table ✓
-- [ ] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example
+- [ ] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓ Planned
 - [ ] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification
 - [ ] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps
 - [ ] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block
@@ -101,7 +101,7 @@
 |-------|----------------|--------|-----------|
 | 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | 3/3 |
 | 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
-| 3. CSV Reference | 0/? | Not started | 0/? |
+| 3. CSV Reference | 1/1 | ✓ Planned | 1/1 |
 | 4. Import Guide | 0/? | Not started | 0/? |
 | 5. Troubleshooting Guide | 0/? | Not started | 0/? |
 | 6. Home Page | 0/? | Not started | 0/? |
