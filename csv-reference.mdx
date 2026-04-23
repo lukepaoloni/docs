@@ -19,8 +19,8 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 | Price | Yes | All Plans | Price in your store currency | 9.99 |
 | Order Subtotal \>= | No | All Plans | Minimum order value to qualify (in cents) | 0 |
 | Order Subtotal \<= | No | All Plans | Maximum order value to qualify (in cents) | 10000 |
-| Weight \>= | No | All Plans | Minimum weight in grams | 0 |
-| Weight \<= | No | All Plans | Maximum weight in grams | 5000 |
+| Weight \>= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "10 kg" |
+| Weight \<= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "20kg" |
 | Transit Time Min Days | No | <Badge color="blue" size="sm">Coming Soon</Badge> | Minimum delivery days | 3 |
 | Transit Time Max Days | No | <Badge color="blue" size="sm">Coming Soon</Badge> | Maximum delivery days | 7 |
 
@@ -1457,13 +1457,17 @@ The minimum and maximum order values (in your store currency) to qualify for thi
 Prices are entered in regular amounts (9.99), not cents.
 
 ### Weight \>= and \<=
-The minimum and maximum weight in grams to qualify for this rate. For example:
+The minimum and maximum weight to qualify for this rate. You can enter just a number, or a number with a specific unit.
 
-- **Weight \>= 0** and **Weight \<= 500** = packages up to 500g (0.5kg)
-- **Weight \>= 500** and **Weight \<= 1000** = packages from 500g to 1kg
+- **Just a number** (e.g., `10`) — MatrixRates will use your Shopify store's default weight unit.
+- **Number + Unit** (e.g., `10kg` or `500 g`) — You can specify a unit to override the default. Supported units: `g`, `kg`, `oz`, `lb`.
+
+For example:
+- **Weight \>= 0** and **Weight \<= 5** = up to 5 units (using store default)
+- **Weight \>= 500g** and **Weight \<= 1kg** = packages from 500g to 1kg
 
 <Tip>
-Need to work in kilograms? Multiply by 1000. 1kg = 1000g.
+If you don't specify a unit, double-check your Shopify Admin (**Settings > Store details**) to confirm which unit your store uses.
 </Tip>
 
 ### Transit Time Min Days and Max Days
@@ -1481,10 +1485,10 @@ Here's what a complete, valid rate table looks like:
 
 ```csv
 Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,10000,0,5000,3,7
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,10000,50000,0,5000,3,7
-US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0,10000,0,1000,1,2
-UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0,10000,0,2000,2,5
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,10000,0,5kg,3,7
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,10000,50000,0,5kg,3,7
+US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0,10000,0,1kg,1,2
+UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0,10000,0,2000g,2,5
 ```
 
 This example shows:
@@ -1515,7 +1519,7 @@ A price of 0 means free shipping for orders that match the conditions.
 **What to do:** Use this to offer free shipping over a certain order value or for certain products.
 
 ### Weight = 0
-When the minimum weight is 0, the rate applies to all packages from 0 grams up to the maximum weight you set.
+When the minimum weight is 0 (or empty), the rate applies to all packages from the lowest possible weight up to the maximum you set.
 
 **What happens:** The rate applies to your lightest items.
 
@@ -1526,9 +1530,9 @@ For complete coverage, create overlapping ranges like this:
 
 | Weight \>= | Weight \<= |
 |-----------|------------|
-| 0 | 500 |
-| 500 | 1000 |
-| 1000 | 2000 |
+| 0 | 500g |
+| 500g | 1kg |
+| 1kg | 2kg |
 
 **What happens:** Each package falls into exactly one range — there's no gap between 500g and 501g that would charge the wrong price.
 
