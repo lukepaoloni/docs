@@ -16,7 +16,7 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 | City | No | Growth, Scale | City name or leave blank | "New York" |
 | Name | Yes | All Plans | A short name for this rate | "Standard Shipping" |
 | Description | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
-| Price | Yes | All Plans | Price in your store currency | 9.99 |
+| Price | Yes | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | 9.99 |
 | Order Subtotal \>= | No | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | 0 |
 | Order Subtotal \<= | No | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | "100.00 USD" |
 | Weight \>= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "10 kg" |
@@ -1441,10 +1441,13 @@ A short, friendly name for this shipping rate. This is what your customer sees a
 A description of what this rate includes. Your customer sees this at checkout. Leave blank if you don't want to show any description.
 
 ### Price
-The shipping price in your store currency. Enter the amount (like 9.99), not in cents.
+The shipping price. Like subtotals, you can enter just a number or include a currency code.
+
+- **Just a number** (e.g., `9.99`) — Uses your store's default currency.
+- **Number + Currency** (e.g., `10.00 USD`) — Overrides the default currency for this specific rate.
 
 <Note>
-A price of **0** means free shipping for those orders that match the conditions.
+A price of **0** (or `0.00`) means free shipping for orders that match the conditions.
 </Note>
 
 ### Order Subtotal \>= and \<=
