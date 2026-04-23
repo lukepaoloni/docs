@@ -10,10 +10,10 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 | Column | Required | Available On | Accepted values | Example |
 |--------|----------|--------------|-----------------|---------|
 | Zone | Yes | All Plans | Any zone name you've set up in Shopify | "US Standard" |
-| Country Code | Yes | All Plans | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
-| Province | No | All Plans | Full state or province name (California, Ontario) or leave blank | "California" |
-| Postcode | No | Growth, Scale | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
-| City | No | Growth, Scale | City name or leave blank | "New York" |
+| Country Code | Yes | All Plans | Two-letter country code or `*` for all countries | "US" |
+| Province | No | All Plans | Full state name, comma-separated list, or `*` for all | "California" |
+| Postcode | No | Growth, Scale | Comma-separated ZIP codes or wildcards (902*) | "10001, 10002" |
+| City | No | Growth, Scale | Comma-separated cities or wildcards (New *) | "New York, London" |
 | Name | Yes | All Plans | A short name for this rate | "Standard Shipping" |
 | Description | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
 | Price | Yes | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | 9.99 |
@@ -30,7 +30,10 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 The shipping zone this rate applies to. This must match a zone you've already created in the MatrixRates app. If the zone name doesn't exist, the import will fail.
 
 ### Country Code
-The two-letter code for the destination country. Use standard ISO codes.
+The two-letter code for the destination country. Use standard ISO codes. 
+
+- **Specific Country** (e.g., `US`, `GB`) — Applies the rate to that country.
+- **Global Wildcard** (`*`) — Applies the rate to **all supported countries**.
 
 <Accordion title="See supported country codes">
 | Country Name                                 | Country Code |
@@ -275,7 +278,10 @@ The two-letter code for the destination country. Use standard ISO codes.
 </Accordion>
 
 ### Province
-The state, province, or region within a country. Enter the full name (like "California" or "Ontario"). Leave blank if you want the rate to apply to all provinces in the country.
+The state, province, or region within a country. Enter the full name (like "California" or "Ontario"). 
+
+- **Multiple Provinces** — You can enter a comma-separated list (e.g., `California, New York, Texas`).
+- **All Provinces** — Leave blank or enter `*` to apply the rate to all provinces in the country.
 
 <Accordion title="See supported province names">
 | Province                                 | Country Name         | Country Code |
@@ -1413,7 +1419,7 @@ The state, province, or region within a country. Enter the full name (like "Cali
 ### Postcode
 <Badge color="green">Growth Plan</Badge> <Badge color="green">Scale Plan</Badge>
 
-The postal or ZIP code. You can enter a specific code (like "90210") or use wildcards for powerful matching:
+The postal or ZIP code. You can enter a single code, a **comma-separated list** (e.g. `90210, 90211`), or use wildcards for powerful matching:
 
 - **90210** — Matches exactly "90210"
 - **90\*** — Matches any code starting with "90" (e.g., 90210, 90001)
@@ -1426,7 +1432,7 @@ Leave blank if you want the rate to apply to all postcodes.
 ### City
 <Badge color="green">Growth Plan</Badge> <Badge color="green">Scale Plan</Badge>
 
-The city name. You can use the same wildcard patterns as postcodes:
+The city name. You can enter a single city, a **comma-separated list** (e.g. `London, Paris`), or use wildcard patterns:
 
 - **London** — Matches exactly "London"
 - **New \*** — Matches "New York", "New Orleans", etc.
@@ -1449,6 +1455,15 @@ The shipping price. Like subtotals, you can enter just a number or include a cur
 <Note>
 A price of **0** (or `0.00`) means free shipping for orders that match the conditions.
 </Note>
+
+### CSV Limits and Safety
+
+To ensure your file imports smoothly and securely, keep these technical limits in mind:
+
+- **Row Limit** — Your spreadsheet can have a maximum of **15,000 rows**.
+- **Name & Description** — Names must be under **255 characters**. Descriptions must be under **2,048 characters**.
+- **Formula Safety** — For security reasons, any text in the **Name** or **Description** column cannot start with formula characters like `=`, `+`, `-`, or `@`.
+- **Weight vs Subtotal** — A single row can have either Weight conditions OR Order Subtotal conditions, but **not both**. If you need both, create two separate rows.
 
 ### Order Subtotal \>= and \<=
 The minimum and maximum order values to qualify for this rate. You can enter just a number, or a number with a specific currency code.
