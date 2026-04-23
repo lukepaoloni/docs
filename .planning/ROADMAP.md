@@ -82,8 +82,11 @@ Plans:
   2. Every error entry contains three things: the plain-English cause, a screenshot of the error in context, and a specific numbered fix sequence that resolves it
   3. A "Common mistakes before importing" section covers at least three pre-import failure modes: wrong file format, missing required columns, and invalid values — each with a fix
   4. The page ends with a "Still stuck?" block containing a direct, clickable mailto link to support@dojoapps.co.uk
-**Plans**: TBD
+**Plans**: 1 plan
 **UI hint**: yes
+
+Plans:
+- [ ] 05-01-PLAN.md — Write the complete Troubleshooting Guide content
 
 ### Phase 6: Home Page
 **Goal**: Merchants arriving at the docs root immediately understand what MatrixRates Import/Export does, who it is for, and where to start — with no broken navigation cards
