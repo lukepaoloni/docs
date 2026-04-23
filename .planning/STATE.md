@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 3 (CSV Reference)
-current_plan: Not started
+current_phase: 4 (Import Guide)
+current_plan: 04-01 Complete
 status: executing
-last_updated: "2026-04-23T06:30:07.683Z"
+last_updated: "2026-04-23T18:58:17.062Z"
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 5
-  completed_plans: 4
-  percent: 80
+  completed_phases: 4
+  total_plans: 6
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State — MatrixRates Import/Export Docs
@@ -28,16 +28,16 @@ progress:
 ## Current Position
 
 - **Milestone:** 1 — Complete merchant documentation for import/export workflows
-- **Current phase:** 3 (CSV Reference)
-- **Current plan:** 03-01 Complete
-- **Status:** Ready to execute
-- **Status:** Ready to execute
+- **Current phase:** 4 (Import Guide)
+- **Current plan:** 04-01 Complete
+- **Status:** Ready for next phase
+- **Status:** Ready for next phase
 
 ### Progress Bar
 
 ```
-Phase 1 [✓] Phase 2 [✓] Phase 3 [✓] Phase 4 [ ] Phase 5 [ ] Phase 6 [ ]
-3/6 phases complete
+Phase 1 [✓] Phase 2 [✓] Phase 3 [✓] Phase 4 [✓] Phase 5 [ ] Phase 6 [ ]
+4/6 phases complete
 ```
 
 ---
@@ -49,7 +49,7 @@ Phase 1 [✓] Phase 2 [✓] Phase 3 [✓] Phase 4 [ ] Phase 5 [ ] Phase 6 [ ]
 | 1 | Site Rebrand & Scaffold | ✓ Complete | 3/3 |
 | 2 | Export Guide | ✓ Complete | 1/1 |
 | 3 | CSV Reference | ✓ Complete | 1/1 |
-| 4 | Import Guide | Not started | 0/? |
+| 4 | Import Guide | ✓ Complete | 1/1 |
 | 5 | Troubleshooting Guide | Not started | 0/? |
 | 6 | Home Page | Not started | 0/? |
 
@@ -57,9 +57,9 @@ Phase 1 [✓] Phase 2 [✓] Phase 3 [✓] Phase 4 [ ] Phase 5 [ ] Phase 6 [ ]
 
 ## Performance Metrics
 
-- **Phases complete:** 1/6
-- **Requirements shipped:** 4/20
-- **Plans complete:** 3/3
+- **Phases complete:** 4/6
+- **Requirements shipped:** 8/20
+- **Plans complete:** 6/6
 
 ---
 
@@ -67,7 +67,10 @@ Phase 1 [✓] Phase 2 [✓] Phase 3 [✓] Phase 4 [ ] Phase 5 [ ] Phase 6 [ ]
 
 ### Decisions
 
-*(None yet — populated at phase transitions)*
+*(— populated at phase transitions)*
+
+- [Phase 04]: Used a <Warning> block at the top of Import Guide to emphasize data overwrite risks
+- [Phase 04]: Included a verification section in Import Guide to guide merchants to Shopify Admin settings
 
 ### Blockers
 

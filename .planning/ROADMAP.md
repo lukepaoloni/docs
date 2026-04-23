@@ -13,7 +13,7 @@
 - [x] **Phase 1: Site Rebrand & Scaffold** — Strip Mintlify starter kit, apply MatrixRates branding, and lock URL structure atomically
 - [x] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table ✓
 - [x] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓
-- [ ] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification ✓ Planned
+- [x] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification ✓ Planned (completed 2026-04-23)
 - [ ] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps
 - [ ] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block
 
@@ -71,7 +71,7 @@
 **UI hint**: yes
 
 Plans:
-- [ ] 04-01-PLAN.md — Write the complete Import Guide content
+- [x] 04-01-PLAN.md — Write the complete Import Guide content
 
 ### Phase 5: Troubleshooting Guide
 **Goal**: A merchant who encounters any import error can find it by scanning or searching, read a plain-English explanation, and follow concrete fix steps without contacting support
@@ -105,7 +105,7 @@ Plans:
 | 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | 3/3 |
 | 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
 | 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
-| 4. Import Guide | 0/1 | ✓ Planned | 0/1 |
+| 4. Import Guide | 1/1 | Complete   | 2026-04-23 |
 | 5. Troubleshooting Guide | 0/? | Not started | 0/? |
 | 6. Home Page | 0/? | Not started | 0/? |
 
@@ -125,10 +125,10 @@ Plans:
 | CSV-02 | Phase 3 | ✓ Complete |
 | CSV-03 | Phase 3 | ✓ Complete |
 | CSV-04 | Phase 3 | ✓ Complete |
-| IMPORT-01 | Phase 4 | Pending |
-| IMPORT-02 | Phase 4 | Pending |
-| IMPORT-03 | Phase 4 | Pending |
-| IMPORT-04 | Phase 4 | Pending |
+| IMPORT-01 | Phase 4 | ✓ Complete |
+| IMPORT-02 | Phase 4 | ✓ Complete |
+| IMPORT-03 | Phase 4 | ✓ Complete |
+| IMPORT-04 | Phase 4 | ✓ Complete |
 | TROUBLE-01 | Phase 5 | Pending |
 | TROUBLE-02 | Phase 5 | Pending |
 | TROUBLE-03 | Phase 5 | Pending |
