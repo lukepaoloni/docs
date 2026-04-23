@@ -96,8 +96,11 @@ Plans:
   1. A merchant landing on the docs root reads a clear one-paragraph intro explaining what MatrixRates Import/Export does and explicitly naming the audience (Shopify store owners)
   2. Navigation cards for all four major sections (Import, Export, CSV Reference, Troubleshooting) are visible on the home page and each card links to a live, non-404 page
   3. A "Before you start" block on the home page lists the two prerequisites: the app is installed, and the merchant has Shopify admin access
-**Plans**: TBD
+**Plans**: 1 plan
 **UI hint**: yes
+
+Plans:
+- [ ] 06-01-PLAN.md — Write the complete Home Page content
 
 ---
 
@@ -110,7 +113,7 @@ Plans:
 | 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
 | 4. Import Guide | 1/1 | Complete   | 2026-04-23 |
 | 5. Troubleshooting Guide | 1/1 | Complete   | 2026-04-23 |
-| 6. Home Page | 0/? | Not started | 0/? |
+| 6. Home Page | 0/1 | Planned    | 0/1 |
 
 ---
 
@@ -132,9 +135,9 @@ Plans:
 | IMPORT-02 | Phase 4 | ✓ Complete |
 | IMPORT-03 | Phase 4 | ✓ Complete |
 | IMPORT-04 | Phase 4 | ✓ Complete |
-| TROUBLE-01 | Phase 5 | Pending |
-| TROUBLE-02 | Phase 5 | Pending |
-| TROUBLE-03 | Phase 5 | Pending |
+| TROUBLE-01 | Phase 5 | ✓ Complete |
+| TROUBLE-02 | Phase 5 | ✓ Complete |
+| TROUBLE-03 | Phase 5 | ✓ Complete |
 | HOME-01 | Phase 6 | Pending |
 | HOME-02 | Phase 6 | Pending |
 | HOME-03 | Phase 6 | Pending |
