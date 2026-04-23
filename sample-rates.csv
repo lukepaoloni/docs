@@ -1,0 +1,9 @@
+Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
+US Standard,US,,,,"US Standard Shipping","Standard ground shipping to US addresses",9.99,0,10000,0,5000,3,7
+US Standard,US,,,,"US Standard Shipping","Standard ground shipping to US addresses",14.99,10000,50000,0,5000,3,7
+US Express,US,,,,"US Express Shipping","Express delivery to US addresses",19.99,0,10000,0,1000,1,2
+US Express,US,,,,"US Express Shipping","Express delivery to US addresses",29.99,10000,50000,0,1000,1,2
+UK Standard,GB,,,,"UK Standard Delivery","Standard delivery to UK",7.99,0,10000,0,2000,2,5
+UK Express,GB,,,,"UK Express Delivery","Next day delivery to UK",14.99,0,5000,0,500,1,1
+EU Standard,FR,,,,"EU Standard Shipping","Standard shipping to France",12.99,0,10000,0,3000,3,7
+CA Standard,CA,,,,"CA Standard Shipping","Standard delivery to Canada",19.99,0,10000,0,5000,5,10

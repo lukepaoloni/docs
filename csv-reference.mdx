@@ -3,4 +3,170 @@ title: "CSV Reference"
 description: "Column-by-column reference for the MatrixRates CSV format."
 ---
 
-This reference is coming soon.
+This page explains every column in your rate table CSV file. Use it to understand what each column means, what values to enter, and how to handle special cases.
+
+## Column reference table
+
+| Column | Type | Required | Accepted values | Example |
+|--------|------|----------|---------------|---------|
+| Zone | Text | Yes | Any zone name you've set up in Shopify | "US Standard" |
+| Country Code | Text | Yes | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
+| Province | Text | No | State or province code (CA, NY, TX) or leave blank | "CA" |
+| Postcode | Text | No | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
+| City | Text | No | City name or leave blank | "New York" |
+| Name | Text | Yes | A short name for this rate | "Standard Shipping" |
+| Description | Text | No | What the merchant sees at checkout | "Delivery in 3-7 days" |
+| Price | Number | Yes | Price in your store currency | 9.99 |
+| Order Subtotal >= | Number | No | Minimum order value to qualify (in cents) | 0 |
+| Order Subtotal <= | Number | No | Maximum order value to qualify (in cents) | 10000 |
+| Weight >= | Number | No | Minimum weight in grams | 0 |
+| Weight <= | Number | No | Maximum weight in grams | 5000 |
+| Transit Time Min Days | Number | No | Minimum delivery days | 3 |
+| Transit Time Max Days | Number | No | Maximum delivery days | 7 |
+
+## What each column means
+
+### Zone
+The shipping zone this rate applies to. This must match a zone you've already created in the MatrixRates app. If the zone name doesn't exist, the import will fail.
+
+### Country Code
+The two-letter code for the destination country. Use standard ISO codes:
+
+- **US** — United States
+- **GB** — United Kingdom
+- **FR** — France
+- **DE** — Germany
+- **CA** — Canada
+- **AU** — Australia
+
+For a full list, search online for "ISO 3166-1 alpha-2 country codes".
+
+### Province
+The state, province, or region within a country. Enter the code (like "CA" for California or "NY" for New York). Leave blank if you want the rate to apply to all provinces in the country.
+
+### Postcode
+The postal or ZIP code. You can enter a specific code (like "90210") or use patterns:
+
+- **90210** — exact match
+- **90*** — starts with 90 (use with caution)
+- Leave blank if you want the rate to apply to all postcodes
+
+### City
+The city name. Leave blank if you want the rate to apply to all cities in the country or province.
+
+### Name
+A short, friendly name for this shipping rate. This is what your customer sees at checkout. Keep it under 50 characters.
+
+### Description
+A description of what this rate includes. Your customer sees this at checkout. Leave blank if you don't want to show any description.
+
+### Price
+The shipping price in your store currency. Enter the amount (like 9.99), not in cents.
+
+<Note>
+A price of **0** means free shipping for those orders that match the conditions.
+</Note>
+
+### Order Subtotal >= and <=
+The minimum and maximum order values (in your store currency) to qualify for this rate. For example:
+
+- **Order Subtotal >= 0** and **Order Subtotal <= 10000** = orders from $0 to $100
+- Leave both blank = no minimum order requirement
+- Leave **Order Subtotal <=** blank = no maximum limit
+
+Prices are entered in regular amounts (9.99), not cents.
+
+### Weight >= and <=
+The minimum and maximum weight in grams to qualify for this rate. For example:
+
+- **Weight >= 0** and **Weight <= 500** = packages up to 500g (0.5kg)
+- **Weight >= 500** and **Weight <= 1000** = packages from 500g to 1kg
+
+<Tip>
+Need to work in kilograms? Multiply by 1000. 1kg = 1000g.
+</Tip>
+
+### Transit Time Min Days and Max Days
+The delivery time window. For example:
+
+- **Transit Time Min Days = 3** and **Transit Time Max Days = 7** = delivery in 3 to 7 business days
+- **Transit Time Min Days = 1** and **Transit Time Max Days = 1** = next day delivery
+- Leave both blank = no transit time displayed
+
+## Inline example
+
+Here's what a complete, valid rate table looks like:
+
+```csv
+Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,10000,0,5000,3,7
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,10000,50000,0,5000,3,7
+US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0,10000,0,1000,1,2
+UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0,10000,0,2000,2,5
+```
+
+This example shows:
+
+- Two US zones (Standard and Express) with different weight ranges
+- Tiered pricing — orders over $100 get a different rate
+- A UK zone with its own pricing
+- Delivery time estimates for each zone
+
+<Tip>
+Download the sample file below and open it in Excel or Google Sheets to see how the columns work in practice.
+</Tip>
+
+## Edge cases
+
+### A cell is left blank
+If a cell in a required column is blank, the import will fail. Required columns are: Zone, Country Code, Name, and Price.
+
+**What happens:** You'll get an error message telling you which row has the problem.
+
+**What to do:** Fill in the missing value and try importing again.
+
+### Price is zero
+A price of 0 means free shipping for orders that match the conditions.
+
+**What happens:** Customers pay nothing for shipping on those orders.
+
+**What to do:** Use this to offer free shipping over a certain order value or for certain products.
+
+### Weight = 0
+When the minimum weight is 0, the rate applies to all packages from 0 grams up to the maximum weight you set.
+
+**What happens:** The rate applies to your lightest items.
+
+**What to do:** This is normal — leave the minimum at 0 if there's no lower limit.
+
+### Consecutive weight ranges
+For complete coverage, create overlapping ranges like this:
+
+| Weight >= | Weight <= |
+|-----------|------------|
+| 0 | 500 |
+| 500 | 1000 |
+| 1000 | 2000 |
+
+**What happens:** Each package falls into exactly one range — there's no gap between 500g and 501g that would charge the wrong price.
+
+**What to do:** Always use consecutive ranges with no gaps.
+
+### Blank province or postcode
+If you leave Province, Postcode, or City blank, the rate applies to the entire country.
+
+**What happens:** The rate becomes the default for that country — any order from that country uses this rate unless a more specific match exists.
+
+**What to do:** Put your most general rate (the cheapest or slowest option) last in your CSV so specific rates take priority.
+
+## Download sample
+
+<Tip>
+[D Download sample-rates.csv](/sample-rates.csv) — A working example you can edit and import.
+</Tip>
+
+## Next steps
+
+- Learn how to [import your rates](/import-guide) into MatrixRates
+- Export your [current rates](/export-guide) to see what you already have
+- Check the [troubleshooting guide](/troubleshooting) if you run into problems
