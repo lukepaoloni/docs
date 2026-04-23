@@ -17,9 +17,9 @@
 
 ### Home Page
 
-- [ ] **HOME-01**: Merchant arriving at the docs root sees a clear intro explaining what MatrixRates Import/Export does and who it is for
-- [ ] **HOME-02**: Merchant can navigate to any major section (Import, Export, CSV Reference, Troubleshooting) from the home page via quick-start cards
-- [ ] **HOME-03**: Home page shows a "Before you start" block listing prerequisites (app installed, Shopify admin access)
+- [x] **HOME-01**: Merchant arriving at the docs root sees a clear intro explaining what MatrixRates Import/Export does and who it is for
+- [x] **HOME-02**: Merchant can navigate to any major section (Import, Export, CSV Reference, Troubleshooting) from the home page via quick-start cards
+- [x] **HOME-03**: Home page shows a "Before you start" block listing prerequisites (app installed, Shopify admin access)
 
 ### Export Guide
 
@@ -89,9 +89,9 @@
 | TROUBLE-01 | Phase 5 | Complete |
 | TROUBLE-02 | Phase 5 | Complete |
 | TROUBLE-03 | Phase 5 | Complete |
-| HOME-01 | Phase 6 | Pending |
-| HOME-02 | Phase 6 | Pending |
-| HOME-03 | Phase 6 | Pending |
+| HOME-01 | Phase 6 | Complete |
+| HOME-02 | Phase 6 | Complete |
+| HOME-03 | Phase 6 | Complete |
 
 ---
 

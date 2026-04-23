@@ -15,7 +15,7 @@
 - [x] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓
 - [x] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification ✓ Planned (completed 2026-04-23)
 - [x] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps (completed 2026-04-23)
-- [ ] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block
+- [x] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block (completed 2026-04-23)
 
 ---
 
@@ -100,7 +100,7 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 06-01-PLAN.md — Write the complete Home Page content
+- [x] 06-01-PLAN.md — Write the complete Home Page content
 
 ---
 
@@ -113,7 +113,7 @@ Plans:
 | 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
 | 4. Import Guide | 1/1 | Complete   | 2026-04-23 |
 | 5. Troubleshooting Guide | 1/1 | Complete   | 2026-04-23 |
-| 6. Home Page | 0/1 | Planned    | 0/1 |
+| 6. Home Page | 1/1 | Complete   | 2026-04-23 |
 
 ---
 
@@ -138,9 +138,9 @@ Plans:
 | TROUBLE-01 | Phase 5 | ✓ Complete |
 | TROUBLE-02 | Phase 5 | ✓ Complete |
 | TROUBLE-03 | Phase 5 | ✓ Complete |
-| HOME-01 | Phase 6 | Pending |
-| HOME-02 | Phase 6 | Pending |
-| HOME-03 | Phase 6 | Pending |
+| HOME-01 | Phase 6 | ✓ Complete |
+| HOME-02 | Phase 6 | ✓ Complete |
+| HOME-03 | Phase 6 | ✓ Complete |
 
 **Total mapped: 20/20**
 
