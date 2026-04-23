@@ -12,8 +12,8 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 | Zone | Text | Yes | Any zone name you've set up in Shopify | "US Standard" |
 | Country Code | Text | Yes | Two-letter country code (US, GB, FR, CA, etc.) | "US" |
 | Province | Text | No | Full state or province name (California, Ontario) or leave blank | "California" |
-| Postcode | Text | No | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
-| City | Text | No | City name or leave blank | "New York" |
+| Postcode (Growth+) | Text | No | Postal or ZIP code pattern (90210, SW1A 1AA) or leave blank | "10001" |
+| City (Growth+) | Text | No | City name or leave blank | "New York" |
 | Name | Text | Yes | A short name for this rate | "Standard Shipping" |
 | Description | Text | No | What the merchant sees at checkout | "Delivery in 3-7 days" |
 | Price | Number | Yes | Price in your store currency | 9.99 |
@@ -1411,14 +1411,28 @@ The state, province, or region within a country. Enter the full name (like "Cali
 </Accordion>
 
 ### Postcode
-The postal or ZIP code. You can enter a specific code (like "90210") or use patterns:
+<Badge text="Growth Plan" color="green" /> <Badge text="Scale Plan" color="green" />
 
-- **90210** — exact match
-- **90*** — starts with 90 (use with caution)
-- Leave blank if you want the rate to apply to all postcodes
+The postal or ZIP code. You can enter a specific code (like "90210") or use wildcards for powerful matching:
+
+- **90210** — Matches exactly "90210"
+- **90\*** — Matches any code starting with "90" (e.g., 90210, 90001)
+- **\*1AA** — Matches any code ending with "1AA"
+- **SW\* AA** — Matches codes like "SW1A 1AA" or "SW2 0AA"
+- **\*** — Matches everything (same as leaving it blank)
+
+Leave blank if you want the rate to apply to all postcodes.
 
 ### City
-The city name. Leave blank if you want the rate to apply to all cities in the country or province.
+<Badge text="Growth Plan" color="green" /> <Badge text="Scale Plan" color="green" />
+
+The city name. You can use the same wildcard patterns as postcodes:
+
+- **London** — Matches exactly "London"
+- **New \*** — Matches "New York", "New Orleans", etc.
+- **\* city** — Matches "Kansas City", "Jersey City", etc.
+
+Leave blank if you want the rate to apply to all cities in the country or province.
 
 ### Name
 A short, friendly name for this shipping rate. This is what your customer sees at checkout. Keep it under 50 characters.
