@@ -1508,7 +1508,14 @@ The delivery time window. For example:
 
 Here's what a complete, valid rate table looks like:
 
-```csv
+| Zone | Country Code | Province | Name | Price | Order Subtotal \>= | Weight \<= | Transit Time Min Days |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| US Standard | US | | Standard Shipping | 9.99 | 0 | 5kg | 3 |
+| US Standard | US | | Standard Shipping | 14.99 | 100 | 5kg | 3 |
+| US Express | US | | Express Shipping | 19.99 | 0 USD | 1kg | 1 |
+| UK Standard | GB | | UK Delivery | 7.99 | 0 GBP | 2000g | 2 |
+
+```csv Copy raw CSV
 Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
 US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,100,0,5kg,3,7
 US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,100,500,0,5kg,3,7
