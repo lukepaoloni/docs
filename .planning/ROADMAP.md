@@ -11,7 +11,7 @@
 ## Phases
 
 - [x] **Phase 1: Site Rebrand & Scaffold** — Strip Mintlify starter kit, apply MatrixRates branding, and lock URL structure atomically
-- [ ] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table
+- [x] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table ✓
 - [ ] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example
 - [ ] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification
 - [ ] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps
@@ -99,12 +99,12 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | - |
-| 2. Export Guide | 0/1 | Not started | - |
-| 3. CSV Reference | 0/? | Not started | - |
-| 4. Import Guide | 0/? | Not started | - |
-| 5. Troubleshooting Guide | 0/? | Not started | - |
-| 6. Home Page | 0/? | Not started | - |
+| 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | 3/3 |
+| 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
+| 3. CSV Reference | 0/? | Not started | 0/? |
+| 4. Import Guide | 0/? | Not started | 0/? |
+| 5. Troubleshooting Guide | 0/? | Not started | 0/? |
+| 6. Home Page | 0/? | Not started | 0/? |
 
 ---
 
@@ -116,8 +116,8 @@
 | SITE-02 | Phase 1 | Pending |
 | SITE-03 | Phase 1 | Pending |
 | SITE-04 | Phase 1 | Pending |
-| EXPORT-01 | Phase 2 | Pending |
-| EXPORT-02 | Phase 2 | Pending |
+| EXPORT-01 | Phase 2 | ✓ Complete |
+| EXPORT-02 | Phase 2 | ✓ Complete |
 | CSV-01 | Phase 3 | Pending |
 | CSV-02 | Phase 3 | Pending |
 | CSV-03 | Phase 3 | Pending |
