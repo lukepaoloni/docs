@@ -101,7 +101,7 @@
 |-------|----------------|--------|-----------|
 | 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | 3/3 |
 | 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
-| 3. CSV Reference | 1/1 | ✓ Planned | 1/1 |
+| 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
 | 4. Import Guide | 0/? | Not started | 0/? |
 | 5. Troubleshooting Guide | 0/? | Not started | 0/? |
 | 6. Home Page | 0/? | Not started | 0/? |
@@ -118,10 +118,10 @@
 | SITE-04 | Phase 1 | Pending |
 | EXPORT-01 | Phase 2 | ✓ Complete |
 | EXPORT-02 | Phase 2 | ✓ Complete |
-| CSV-01 | Phase 3 | Pending |
-| CSV-02 | Phase 3 | Pending |
-| CSV-03 | Phase 3 | Pending |
-| CSV-04 | Phase 3 | Pending |
+| CSV-01 | Phase 3 | ✓ Complete |
+| CSV-02 | Phase 3 | ✓ Complete |
+| CSV-03 | Phase 3 | ✓ Complete |
+| CSV-04 | Phase 3 | ✓ Complete |
 | IMPORT-01 | Phase 4 | Pending |
 | IMPORT-02 | Phase 4 | Pending |
 | IMPORT-03 | Phase 4 | Pending |
