@@ -31,7 +31,7 @@
   3. All starter kit directories (`essentials/`, `ai-tools/`, `api-reference/`) and their MDX files are deleted; no boilerplate pages are reachable via any URL
   4. `docs.json` declares the complete URL path structure for all planned pages before any content pages exist — every future cross-link target is registered
   5. The support email (support@dojoapps.co.uk) is present in the navbar and no API Reference tab appears in the site navigation
-**Plans**: TBD
+**Plans**: 3 plans (01-01, 01-02, 01-03)
 **UI hint**: yes
 
 ### Phase 2: Export Guide
