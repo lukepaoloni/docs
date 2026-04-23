@@ -12,8 +12,8 @@
 
 - [x] **Phase 1: Site Rebrand & Scaffold** — Strip Mintlify starter kit, apply MatrixRates branding, and lock URL structure atomically
 - [x] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table ✓
-- [ ] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓ Planned
-- [ ] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification
+- [x] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓
+- [ ] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification ✓ Planned
 - [ ] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps
 - [ ] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block
 
@@ -54,7 +54,7 @@
   2. A working sample CSV file is downloadable directly from the page and opens correctly in spreadsheet software (correct columns, valid values)
   3. A complete filled-in example rate table is visible inline on the page — a merchant can see what a real, valid CSV looks like without downloading anything
   4. The page documents what happens when a cell is blank, when a price is zero, and when a weight value is at the minimum or maximum boundary — each case has an explicit outcome stated
-**Plans**: TBD
+**Plans**: 1 plan (03-01)
 **UI hint**: yes
 
 ### Phase 4: Import Guide
@@ -67,8 +67,11 @@
   3. Each UI step has a screenshot showing the exact state of the MatrixRates app interface the merchant should see at that point
   4. The guide includes post-import verification steps explaining how to confirm the import worked in Shopify shipping settings
   5. The guide ends with a "What to do next" card group covering at least: test your rates, troubleshoot an error, export a backup
-**Plans**: TBD
+**Plans**: 1 plan (04-01)
 **UI hint**: yes
+
+Plans:
+- [ ] 04-01-PLAN.md — Write the complete Import Guide content
 
 ### Phase 5: Troubleshooting Guide
 **Goal**: A merchant who encounters any import error can find it by scanning or searching, read a plain-English explanation, and follow concrete fix steps without contacting support
@@ -102,7 +105,7 @@
 | 1. Site Rebrand & Scaffold | 3/3 | ✓ Complete | 3/3 |
 | 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
 | 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
-| 4. Import Guide | 0/? | Not started | 0/? |
+| 4. Import Guide | 0/1 | ✓ Planned | 0/1 |
 | 5. Troubleshooting Guide | 0/? | Not started | 0/? |
 | 6. Home Page | 0/? | Not started | 0/? |
 
@@ -112,10 +115,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SITE-01 | Phase 1 | Pending |
-| SITE-02 | Phase 1 | Pending |
-| SITE-03 | Phase 1 | Pending |
-| SITE-04 | Phase 1 | Pending |
+| SITE-01 | Phase 1 | ✓ Complete |
+| SITE-02 | Phase 1 | ✓ Complete |
+| SITE-03 | Phase 1 | ✓ Complete |
+| SITE-04 | Phase 1 | ✓ Complete |
 | EXPORT-01 | Phase 2 | ✓ Complete |
 | EXPORT-02 | Phase 2 | ✓ Complete |
 | CSV-01 | Phase 3 | ✓ Complete |
@@ -137,4 +140,4 @@
 
 ---
 
-*Generated: 2026-04-22 | Milestone 1 | Granularity: fine*
+*Generated: 2026-04-23 | Milestone 1 | Granularity: fine*
