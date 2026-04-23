@@ -17,8 +17,8 @@ This page explains every column in your rate table spreadsheet file. Use it to u
 | Name | Yes | All Plans | A short name for this rate | "Standard Shipping" |
 | Description | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
 | Price | Yes | All Plans | Price in your store currency | 9.99 |
-| Order Subtotal \>= | No | All Plans | Minimum order value to qualify (in cents) | 0 |
-| Order Subtotal \<= | No | All Plans | Maximum order value to qualify (in cents) | 10000 |
+| Order Subtotal \>= | No | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | 0 |
+| Order Subtotal \<= | No | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | "100.00 USD" |
 | Weight \>= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "10 kg" |
 | Weight \<= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "20kg" |
 | Transit Time Min Days | No | <Badge color="blue" size="sm">Coming Soon</Badge> | Minimum delivery days | 3 |
@@ -1448,13 +1448,20 @@ A price of **0** means free shipping for those orders that match the conditions.
 </Note>
 
 ### Order Subtotal \>= and \<=
-The minimum and maximum order values (in your store currency) to qualify for this rate. For example:
+The minimum and maximum order values to qualify for this rate. You can enter just a number, or a number with a specific currency code.
 
-- **Order Subtotal \>= 0** and **Order Subtotal \<= 10000** = orders from $0 to $100
-- Leave both blank = no minimum order requirement
-- Leave **Order Subtotal \<=** blank = no maximum limit
+- **Just a number** (e.g., `100`) — MatrixRates will use your Shopify store's default currency.
+- **Number + Currency** (e.g., `100.00 USD` or `50 GBP`) — You can specify a three-letter currency code to override the default.
 
-Prices are entered in regular amounts (9.99), not cents.
+For example:
+- **Order Subtotal \>= 0** and **Order Subtotal \<= 100** = orders from 0 to 100 in your store currency.
+- **Order Subtotal \>= 50 GBP** and **Order Subtotal \<= 200 GBP** = orders between £50 and £200.
+
+Leave both blank if there is no subtotal requirement. Leave **Order Subtotal \<=** blank if there is no upper limit.
+
+<Note>
+Prices and subtotals are entered in regular amounts (e.g., `9.99`), not in cents.
+</Note>
 
 ### Weight \>= and \<=
 The minimum and maximum weight to qualify for this rate. You can enter just a number, or a number with a specific unit.
@@ -1485,10 +1492,10 @@ Here's what a complete, valid rate table looks like:
 
 ```csv
 Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,10000,0,5kg,3,7
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,10000,50000,0,5kg,3,7
-US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0,10000,0,1kg,1,2
-UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0,10000,0,2000g,2,5
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,100,0,5kg,3,7
+US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,100,500,0,5kg,3,7
+US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0 USD,100 USD,0,1kg,1,2
+UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0 GBP,100 GBP,0,2000g,2,5
 ```
 
 This example shows:
