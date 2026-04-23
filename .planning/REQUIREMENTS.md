@@ -42,9 +42,9 @@
 
 ### Troubleshooting
 
-- [ ] **TROUBLE-01**: Merchant can find any import error by searching or scanning accordion entries, each showing the verbatim error message, a plain-English cause, and a step-by-step fix
-- [ ] **TROUBLE-02**: Troubleshooting page has a "Common mistakes before importing" section covering wrong file format, missing required columns, and invalid values
-- [ ] **TROUBLE-03**: Troubleshooting page ends with a "Still stuck?" block with a direct link to support@dojoapps.co.uk
+- [x] **TROUBLE-01**: Merchant can find any import error by searching or scanning accordion entries, each showing the verbatim error message, a plain-English cause, and a step-by-step fix
+- [x] **TROUBLE-02**: Troubleshooting page has a "Common mistakes before importing" section covering wrong file format, missing required columns, and invalid values
+- [x] **TROUBLE-03**: Troubleshooting page ends with a "Still stuck?" block with a direct link to support@dojoapps.co.uk
 
 ---
 
@@ -86,9 +86,9 @@
 | IMPORT-02 | Phase 4 | Complete |
 | IMPORT-03 | Phase 4 | Complete |
 | IMPORT-04 | Phase 4 | Complete |
-| TROUBLE-01 | Phase 5 | Pending |
-| TROUBLE-02 | Phase 5 | Pending |
-| TROUBLE-03 | Phase 5 | Pending |
+| TROUBLE-01 | Phase 5 | Complete |
+| TROUBLE-02 | Phase 5 | Complete |
+| TROUBLE-03 | Phase 5 | Complete |
 | HOME-01 | Phase 6 | Pending |
 | HOME-02 | Phase 6 | Pending |
 | HOME-03 | Phase 6 | Pending |

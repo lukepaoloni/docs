@@ -14,7 +14,7 @@
 - [x] **Phase 2: Export Guide** — Write the single-page export walkthrough so merchants can download their current rate table ✓
 - [x] **Phase 3: CSV Reference** — Write the complete CSV column reference with a downloadable sample and inline worked example ✓
 - [x] **Phase 4: Import Guide** — Write the multi-step import walkthrough with screenshots, pre-flight warnings, and post-import verification ✓ Planned (completed 2026-04-23)
-- [ ] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps
+- [x] **Phase 5: Troubleshooting Guide** — Write the error reference with verbatim error strings, plain-English explanations, and fix steps (completed 2026-04-23)
 - [ ] **Phase 6: Home Page** — Write the docs root page with intro copy, navigation cards, and prerequisites block
 
 ---
@@ -86,7 +86,7 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 05-01-PLAN.md — Write the complete Troubleshooting Guide content
+- [x] 05-01-PLAN.md — Write the complete Troubleshooting Guide content
 
 ### Phase 6: Home Page
 **Goal**: Merchants arriving at the docs root immediately understand what MatrixRates Import/Export does, who it is for, and where to start — with no broken navigation cards
@@ -109,7 +109,7 @@ Plans:
 | 2. Export Guide | 1/1 | ✓ Complete | 1/1 |
 | 3. CSV Reference | 1/1 | ✓ Complete | 1/1 |
 | 4. Import Guide | 1/1 | Complete   | 2026-04-23 |
-| 5. Troubleshooting Guide | 0/? | Not started | 0/? |
+| 5. Troubleshooting Guide | 1/1 | Complete   | 2026-04-23 |
 | 6. Home Page | 0/? | Not started | 0/? |
 
 ---
