@@ -17,12 +17,12 @@ MatrixRates only accepts **CSV (Comma Separated Values)** files.
 ### Missing required columns
 The app looks for specific column names in the first row of your file.
 - **The problem:** If you rename a required column or delete it, the import will fail.
-- **The fix:** Make sure your file includes all the required columns: `Zone`, `Country Code`, `Name`, and `Price`. Check the [Spreadsheet Reference](/csv-reference) for the full list.
+- **The fix:** Make sure your file includes all the required columns: `Zone`, `Country Code`, `Name`, and `Price`. Check the [Spreadsheet Reference](/spreadsheet-reference) for the full list.
 
 ### Invalid values
 Some columns only accept specific types of information.
 - **The problem:** Entering text (like "Free") in the `Price` column or a negative number in the `Weight` column will cause an error.
-- **The fix:** Ensure all price and weight columns contain only numbers (e.g., `9.99`, `1500`) or valid units/currency codes as described in the [Spreadsheet Reference](/csv-reference).
+- **The fix:** Ensure all price and weight columns contain only numbers (e.g., `9.99`, `1500`) or valid units/currency codes as described in the [Spreadsheet Reference](/spreadsheet-reference).
 
 ## Error Message Reference
 
@@ -35,7 +35,7 @@ If you see a specific error message during import, find it below for a step-by-s
     **Fix:** 
     1. Open your CSV file.
     2. Check the first row (the headers).
-    3. Make sure the column name matches exactly what's in our [Spreadsheet Reference](/csv-reference).
+    3. Make sure the column name matches exactly what's in our [Spreadsheet Reference](/spreadsheet-reference).
     4. Remove any extra spaces before or after the header text.
   </Accordion>
 
