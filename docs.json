@@ -16,8 +16,9 @@
           "index",
           "export-guide",
           "spreadsheet-reference",
-          "import-guide",
-          "troubleshooting"
+              "import-guide",
+              "troubleshooting",
+              "changelog"
         ]
       }
     ]
