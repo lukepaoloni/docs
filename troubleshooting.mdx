@@ -29,7 +29,7 @@ Some columns only accept specific types of information.
 If you see a specific error message during import, find it below for a step-by-step fix.
 
 <AccordionGroup>
-  <Accordion title="Invalid header: \[column_name\]">
+  <Accordion title="Invalid header: [column_name]">
     **Cause:** The app doesn't recognize a column name in your file. This is usually due to a spelling mistake, an extra space at the beginning or end of the name, or a missing column from our template.
     
     **Fix:** 
@@ -39,7 +39,7 @@ If you see a specific error message during import, find it below for a step-by-s
     4. Remove any extra spaces before or after the header text.
   </Accordion>
 
-  <Accordion title="Missing required header: \[column_name\]">
+  <Accordion title="Missing required header: [column_name]">
     **Cause:** Your file is missing a column that the app needs to process your rates. `Zone`, `Country Code`, `Name`, and `Price` must always be present.
     
     **Fix:**
@@ -49,7 +49,7 @@ If you see a specific error message during import, find it below for a step-by-s
     4. Save and try importing again.
   </Accordion>
 
-  <Accordion title="Row \[number\]: Invalid rate_type value">
+  <Accordion title="Row [number]: Invalid rate_type value">
     **Cause:** You've entered a value in the `rate_type` column that the app doesn't understand.
     
     **Fix:**
@@ -58,7 +58,7 @@ If you see a specific error message during import, find it below for a step-by-s
     3. Make sure it contains either `flat` or `per_kg`. These are the only two valid options.
   </Accordion>
 
-  <Accordion title="Row \[number\]: Price must be a number">
+  <Accordion title="Row [number]: Price must be a number">
     **Cause:** A cell in your `Price` column contains text, symbols, or is formatted incorrectly.
     
     **Fix:**
@@ -67,7 +67,7 @@ If you see a specific error message during import, find it below for a step-by-s
     3. Ensure the cell contains only a number (e.g., `10.00`).
   </Accordion>
 
-  <Accordion title="Row \[number\]: Weight values cannot be negative">
+  <Accordion title="Row [number]: Weight values cannot be negative">
     **Cause:** A weight value in your file is less than zero.
     
     **Fix:**
