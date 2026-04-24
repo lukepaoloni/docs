@@ -11,6 +11,7 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 |--------|----------|--------------|-----------------|---------|
 | Zone | Yes | All Plans | Any zone name you've set up in Shopify | "US Standard" |
 | Country Code | Yes | All Plans | Two-letter country code or `*` for all countries | "US" |
+| Country Name | Yes | All Plans | Full name of the country | "United States" |
 | Province | No | All Plans | Full state name, comma-separated list, or `*` for all | "California" |
 | Postcode | No | Growth, Scale | Comma-separated ZIP codes or wildcards (902*) | "10001, 10002" |
 | City | No | Growth, Scale | Comma-separated cities or wildcards (New *) | "New York, London" |
@@ -276,6 +277,10 @@ The two-letter code for the destination country. Use standard ISO codes.
 | Zambia                                       | ZM       |
 | Zimbabwe                                     | ZW       |
 </Accordion>
+
+### Country Name
+The full name of the country (e.g., `United States` or `United Kingdom`). This is for readability; the app primarily uses the **Country Code** to identify the destination.
+
 
 ### Province
 The state, province, or region within a country. Enter the full name (like "California" or "Ontario"). 
@@ -1508,19 +1513,19 @@ The delivery time window. For example:
 
 Here's what a valid set of shipping rates looks like:
 
-| Zone | Country Code | Province | Name | Price | Order Subtotal \>= | Weight \<= | Transit Time Min Days | Transit Time Max Days |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| US Standard | US | | Standard Shipping | 9.99 | 0 | 5kg | 3 | 7 |
-| US Standard | US | | Standard Shipping | 14.99 | 100 | 5kg | 3 | 7 |
-| US Express | US | | Express Shipping | 19.99 | 0 USD | 1kg | 1 | 2 |
-| UK Standard | GB | | UK Delivery | 7.99 | 0 GBP | 2000g | 2 | 5 |
+| Zone | Country Code | Country Name | Province | Name | Price | Order Subtotal \>= | Order Subtotal \<= | Weight \>= | Weight \<= | Transit Time Min Days | Transit Time Max Days |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| US Standard | US | United States | | Standard Shipping | 9.99 | 0 | 100 | 0 | 5kg | 3 | 7 |
+| US Standard | US | United States | | Standard Shipping | 14.99 | 100 | 500 | 0 | 5kg | 3 | 7 |
+| US Express | US | United States | | Express Shipping | 19.99 | 0 USD | 100 USD | 0 | 1kg | 1 | 2 |
+| UK Standard | GB | United Kingdom | | UK Delivery | 7.99 | 0 GBP | 100 GBP | 0 | 2000g | 2 | 5 |
 
 ```csv Copy raw CSV
-Zone,Country Code,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,100,0,5kg,3,7
-US Standard,US,,,,"Standard Shipping","Delivery in 3-7 days",14.99,100,500,0,5kg,3,7
-US Express,US,,,,"Express Shipping","Delivery in 1-2 days",19.99,0 USD,100 USD,0,1kg,1,2
-UK Standard,GB,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0 GBP,100 GBP,0,2000g,2,5
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
+US Standard,US,United States,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,100,0,5kg,3,7
+US Standard,US,United States,,,,"Standard Shipping","Delivery in 3-7 days",14.99,100,500,0,5kg,3,7
+US Express,US,United States,,,,"Express Shipping","Delivery in 1-2 days",19.99,0 USD,100 USD,0,1kg,1,2
+UK Standard,GB,United Kingdom,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0 GBP,100 GBP,0,2000g,2,5
 ```
 
 This example shows:
