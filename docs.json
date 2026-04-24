@@ -8,25 +8,18 @@
     "dark": "#0d9488"
   },
   "favicon": "/favicon.png",
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "MatrixRates Import/Export",
-            "pages": [
-              "index",
-              "export-guide",
-              "csv-reference",
-              "import-guide",
-              "troubleshooting"
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  "navigation": [
+    {
+      "group": "MatrixRates Import/Export",
+      "pages": [
+        "index",
+        "export-guide",
+        "csv-reference",
+        "import-guide",
+        "troubleshooting"
+      ]
+    }
+  ],
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
