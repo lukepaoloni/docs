@@ -8,18 +8,20 @@
     "dark": "#0d9488"
   },
   "favicon": "/favicon.png",
-  "navigation": [
-    {
-      "group": "MatrixRates Import/Export",
-      "pages": [
-        "index",
-        "export-guide",
-        "spreadsheet-reference",
-        "import-guide",
-        "troubleshooting"
-      ]
-    }
-  ],
+  "navigation": {
+    "groups": [
+      {
+        "group": "MatrixRates Import/Export",
+        "pages": [
+          "index",
+          "export-guide",
+          "spreadsheet-reference",
+          "import-guide",
+          "troubleshooting"
+        ]
+      }
+    ]
+  },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
