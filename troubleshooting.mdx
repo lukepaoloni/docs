@@ -29,7 +29,7 @@ Some columns only accept specific types of information.
 If you see a specific error message during import, find it below for a step-by-step fix.
 
 <AccordionGroup>
-  <Accordion title="Invalid header: [column_name]">
+  <Accordion title="Invalid header: \[column_name\]">
     **Cause:** The app doesn't recognize a column name in your file. This is usually due to a spelling mistake, an extra space at the beginning or end of the name, or a missing column from our template.
     
     **Fix:** 
@@ -37,11 +37,9 @@ If you see a specific error message during import, find it below for a step-by-s
     2. Check the first row (the headers).
     3. Make sure the column name matches exactly what's in our [Spreadsheet Reference](/csv-reference).
     4. Remove any extra spaces before or after the header text.
-    
-    <!-- [Screenshot: Error message in context] -->
   </Accordion>
 
-  <Accordion title="Missing required header: [column_name]">
+  <Accordion title="Missing required header: \[column_name\]">
     **Cause:** Your file is missing a column that the app needs to process your rates. `Zone`, `Country Code`, `Name`, and `Price` must always be present.
     
     **Fix:**
@@ -49,41 +47,33 @@ If you see a specific error message during import, find it below for a step-by-s
     2. Add a new column with the missing header name (e.g., `Price`) in the first row.
     3. Fill in the required data for every row in that column.
     4. Save and try importing again.
-    
-    <!-- [Screenshot: Error message in context] -->
   </Accordion>
 
-  <Accordion title="Row [number]: Invalid rate_type value">
+  <Accordion title="Row \[number\]: Invalid rate_type value">
     **Cause:** You've entered a value in the `rate_type` column that the app doesn't understand.
     
     **Fix:**
     1. Go to the row number mentioned in the error.
     2. Check the `rate_type` cell.
     3. Make sure it contains either `flat` or `per_kg`. These are the only two valid options.
-    
-    <!-- [Screenshot: Error message in context] -->
   </Accordion>
 
-  <Accordion title="Row [number]: Price must be a number">
+  <Accordion title="Row \[number\]: Price must be a number">
     **Cause:** A cell in your `Price` column contains text, symbols, or is formatted incorrectly.
     
     **Fix:**
     1. Go to the row number mentioned in the error.
     2. Remove any currency symbols (like $ or £) or text (like "Free").
     3. Ensure the cell contains only a number (e.g., `10.00`).
-    
-    <!-- [Screenshot: Error message in context] -->
   </Accordion>
 
-  <Accordion title="Row [number]: Weight values cannot be negative">
+  <Accordion title="Row \[number\]: Weight values cannot be negative">
     **Cause:** A weight value in your file is less than zero.
     
     **Fix:**
     1. Go to the row number mentioned in the error.
-    2. Check the `Weight >=` and `Weight <=` columns.
+    2. Check the `Weight \>=` and `Weight \<=` columns.
     3. Change any negative numbers to `0` or higher.
-    
-    <!-- [Screenshot: Error message in context] -->
   </Accordion>
 </AccordionGroup>
 
