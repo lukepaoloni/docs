@@ -3,12 +3,30 @@ title: "Changelog"
 description: "Latest updates and improvements to MatrixRates Import/Export."
 ---
 
-<Update label="April 2026" description="v1.1.0">
-  ### Enhanced Spreadsheet Support
-  We've updated our import logic and documentation to support more flexible shipping rate configurations:
+<Update label="April 2026" description="v1.2.0">
+  ### New Shipping Options & Advanced Filtering
+  We've introduced several powerful features to give you more control over your shipping rates:
 
-  - **Renamed to Spreadsheet Reference** — Our CSV guide is now the "Spreadsheet Reference" to better align with your workflow in Excel and Google Sheets.
-  - **New Weight & Currency Units** — You can now specify units directly in your spreadsheet (e.g., `10kg`, `500g`) and use currency codes (e.g., `100 USD`) to override store defaults.
-  - **Postcode & City Filters** — Added support for advanced location filtering using wildcards (e.g., `902*`) and comma-separated lists for merchants on Growth and Scale plans.
-  - **Automatic Grouping** — Rates sharing the same zone name and location are now automatically grouped together during import.
+  - **Advanced Location Filtering** — Merchants on Growth and Scale plans can now use **Postcode** and **City** filters with advanced wildcard matching (e.g., `902*`) and comma-separated lists.
+  - **Flexible Units & Currencies** — You can now specify units directly in your spreadsheet (e.g., `10kg`, `500g`) and use currency codes (e.g., `100 USD`) to override store defaults.
+  - **Transit Time Support (Soon)** — We've added `Transit Time Min Days` and `Transit Time Max Days` columns to the spreadsheet format in preparation for our upcoming transit time feature.
+  - **Automatic Rate Grouping** — Rates sharing the same zone name and location are now automatically grouped together during import for a cleaner Shopify Admin.
+</Update>
+
+<Update label="April 2026" description="v1.1.0">
+  ### Live Snapshot Architecture
+  We've completely rebuilt the app's backend to be faster, more reliable, and easier to use:
+
+  - **No More Indexing** — MatrixRates now uses a "Live Snapshot" architecture. This means the app fetches your rates directly from Shopify in real-time, eliminating the need for background indexing and synchronization.
+  - **Instant Exports** — Exporting your rates is now significantly faster and always reflects the most up-to-date information in your store.
+  - **Simpler Workflow** — We've streamlined the import and export screens to make it easier to manage your shipping profiles and locations.
+</Update>
+
+<Update label="March 2026" description="v1.0.0">
+  ### Initial Release
+  The first version of MatrixRates Import/Export is now live on the Shopify App Store!
+
+  - **Bulk Import & Export** — Manage hundreds of shipping rates at once using CSV files.
+  - **Spreadsheet Editing** — Edit your rates in Excel, Google Sheets, or Numbers and upload them directly to Shopify.
+  - **Multi-Zone Support** — Full support for complex shipping zones across different countries and provinces.
 </Update>
