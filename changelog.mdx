@@ -3,16 +3,20 @@ title: "Changelog"
 description: "Latest updates and improvements to MatrixRates Import/Export."
 ---
 
-<Update label="April 2026" description="v1.2.0 (Beta)">
-  ### New Shipping Options & Advanced Filtering
-  <Badge color="orange">Beta / Development</Badge>
+<Update label="April 2026 — May 2026" description="v1.2.0">
+  ### New Shipping Options
+  <Badge color="green">Released</Badge>
 
-  We're currently testing several powerful features to give you more control over your shipping rates:
+  We've shipped a set of features to give you more control over your shipping rates.
 
-  - **Advanced Location Filtering** — Merchants on Growth and Scale plans can now use **Postcode** and **City** filters with advanced wildcard matching (e.g., `902*`) and comma-separated lists.
-  - **Flexible Units & Currencies** — You can now specify units directly in your spreadsheet (e.g., `10kg`, `500g`) and use currency codes (e.g., `100 USD`) to override store defaults.
-  - **Transit Time Support (Soon)** — We've added `Transit Time Min Days` and `Transit Time Max Days` columns to the spreadsheet format in preparation for our upcoming transit time feature.
-  - **Automatic Rate Grouping** — Rates sharing the same zone name and location are now automatically grouped together during import for a cleaner Shopify Admin.
+  - **Transit Time Support** — Set delivery day ranges per rate using the new `Transit Time Min Days` and `Transit Time Max Days` columns. Values are validated as non-negative integers with `min ≤ max` before any change reaches Shopify; blank cells leave a rate's transit time unset.
+  - **Free Shipping Thresholds** — Set a minimum order amount that triggers free shipping using the new `Free Min Order Amount` column (e.g., `100.00 GBP`). Above the threshold the rate is free; below it the normal price applies. Currency must match your store's primary market.
+  - **Automatic Rate Grouping** — Rates sharing the same name and zone are automatically grouped together during import as a single Shopify shipping option with tiers. No new column to learn — grouping is implicit. Tiers must be contiguous (e.g., `0–49.99`, `50.00–99.99`), use the same condition type and currency, and any open-ended top tier must be last. The importer rejects mismatches with a per-row error so you can fix the spreadsheet before anything reaches Shopify.
+  - **Better Validation Feedback** — Per-row errors now appear inline in the import preview, with one bullet per offending row, so you can fix multiple issues in one pass.
+
+  <Note>
+    These features are opt-in. Enable them in **Settings → New Shipping Options**. New columns are added to the downloadable example CSV when the toggle is on. With it off, your existing 13-column CSVs continue to work unchanged.
+  </Note>
 </Update>
 
 <Update label="April 2026" description="v1.1.0">
