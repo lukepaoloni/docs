@@ -1,0 +1,128 @@
+---
+title: "Grouped (Tiered) Rates"
+description: "Set up tiered pricing for a single shipping option by grouping multiple rows with the same rate name."
+---
+
+Grouped rates let you create a single shipping option that changes price depending on the order value or weight. Instead of one flat price, you can offer, for example, £3.50 for orders under £50, £1.99 for orders £50–£99.99, and free from £100 — all under one "Standard Shipping" option at checkout.
+
+<Note>
+  Grouped rates are only available when **New Shipping Options** is enabled. See [Enabling New Shipping Options](/new-shipping-options/enable) if you haven't turned it on yet.
+</Note>
+
+## How grouping works
+
+There is no extra column to fill in. Grouping is **automatic**: any two or more rows in the same shipping zone with the same rate name are submitted to Shopify as a single shipping option with multiple price tiers.
+
+Name matching is case-insensitive and ignores leading or trailing spaces. `Royal Mail Tracked 24®` and `royal mail tracked 24®` are treated as the same group.
+
+## Example
+
+The following three rows create a single "Standard" option with subtotal-based tiers:
+
+| Name | Price | Order Subtotal &gt;= | Order Subtotal &lt;= |
+|------|-------|----------------------|----------------------|
+| Standard | 5.99 GBP | 0 | 49.99 GBP |
+| Standard | 2.99 GBP | 50.00 GBP | 99.99 GBP |
+| Standard | 0.00 GBP | 100.00 GBP | |
+
+```csv
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,Order Subtotal >=,Order Subtotal <=,Weight >=,Weight <=,Transit Time Min Days,Transit Time Max Days,Free Min Order Amount
+UK Standard,GB,United Kingdom,*,*,*,Standard,,5.99 GBP,0,49.99 GBP,,,,,
+UK Standard,GB,United Kingdom,*,*,*,Standard,,2.99 GBP,50.00 GBP,99.99 GBP,,,,,
+UK Standard,GB,United Kingdom,*,*,*,Standard,,0.00 GBP,100.00 GBP,,,,,,
+```
+
+The top tier has a blank `Order Subtotal <=` — this is an **open-ended tier**, meaning it covers all orders above £100 with no upper limit. The open-ended tier must always be the last (highest) tier in the group.
+
+## Rules
+
+Follow these rules to avoid import errors when using grouped rates.
+
+### Tiers must be contiguous
+
+Each tier's lower bound must immediately follow the previous tier's upper bound, with a gap of exactly £0.01 for subtotal tiers or 0.0001 for weight tiers.
+
+For the example above:
+- Tier 1 ends at `49.99` — Tier 2 must start at `50.00` ✓
+- Tier 2 ends at `99.99` — Tier 3 must start at `100.00` ✓
+
+If there is a gap or overlap, you will see an error message that tells you the exact value the next tier must start at.
+
+### Use one condition type per group
+
+All rows in a group must use the same type of condition — either all subtotal-based (`Order Subtotal >=` / `Order Subtotal <=`) or all weight-based (`Weight >=` / `Weight <=`). Mixing the two types in the same group is not allowed.
+
+### Use one currency or weight unit per group
+
+All subtotal tiers in a group must use the same currency (e.g., all GBP). All weight tiers must use the same weight unit (e.g., all kg). If a row uses a different unit, it will be rejected.
+
+### The open-ended tier must be last
+
+Only the highest tier — the one with the largest lower bound — may have a blank upper bound. If an earlier tier in a group has a blank upper bound, the import will fail.
+
+### No duplicate flat rates
+
+Two rows with the same name and no conditions (no subtotal or weight range) cannot coexist in the same zone. If you want multiple rows with the same name, they must each have tier conditions.
+
+### Free shipping thresholds must match across the group
+
+If you set a `Free Min Order Amount` on any row in a group, every row that has a value must use the **same amount**. Rows with a blank `Free Min Order Amount` are fine — only rows with a non-blank, conflicting value are rejected.
+
+## Common errors
+
+<AccordionGroup>
+  <Accordion title='Rate "X" in zone "Y" mixes price and weight tiers — a tiered shipping option must use one type'>
+    **Cause:** Some rows in the group have subtotal conditions and others have weight conditions.
+
+    **Fix:** Split the rate into two separate names — one for subtotal-based tiers and one for weight-based tiers.
+  </Accordion>
+
+  <Accordion title="Tier subtotal range starts at X but previous tier ends at Y — next tier must start at Z">
+    **Cause:** There is a gap or overlap between two consecutive tiers. The error message tells you the exact value Z that the next tier must begin at.
+
+    **Fix:** Update the lower bound of the affected tier to the value shown in the error.
+  </Accordion>
+
+  <Accordion title='Only the highest tier of "X" in zone "Y" may omit the upper bound'>
+    **Cause:** A tier that is not the last in the group has a blank upper bound (`Order Subtotal <=` or `Weight <=`).
+
+    **Fix:** Add an upper bound to all tiers except the final (open-ended) one. Sort your tiers from lowest to highest to identify which one is missing its upper bound.
+  </Accordion>
+
+  <Accordion title='Duplicate shipping rate "X" in zone "Y" — rates with the same name must be tiered'>
+    **Cause:** Two or more rows have the same name with no conditions, making them identical flat rates.
+
+    **Fix:** If you want multiple price points, add `Order Subtotal` or `Weight` conditions to each row to create tiers. If they were meant to be different rates, give them different names.
+  </Accordion>
+
+  <Accordion title="Tier currency 'X' must match group currency 'Y' for shipping option ...">
+    **Cause:** One or more rows in the group use a different currency to the rest.
+
+    **Fix:** Make sure all rows in the group use the same three-letter currency code in their price and subtotal columns.
+  </Accordion>
+
+  <Accordion title="Free Min Order Amount X conflicts with Y for shipping option ...">
+    **Cause:** Two rows in the same group both have a `Free Min Order Amount` set, but the values are different.
+
+    **Fix:** Use the same threshold value on all rows in the group, or leave the column blank on all rows.
+  </Accordion>
+</AccordionGroup>
+
+## Free shipping thresholds with tiered rates
+
+You can combine a free shipping threshold with tiered pricing. Set the same `Free Min Order Amount` on all rows in the group. When a customer's order reaches the threshold, Shopify makes the entire rate free — regardless of which tier the order falls into. The tier prices still apply for orders below the threshold.
+
+## Single-rate behaviour is unchanged
+
+If a rate name appears only once in a zone (no other rows share the name), it continues to work exactly as before — as a flat rate with optional conditions. Grouping only applies when two or more rows share the same name in the same zone.
+
+## What to do next
+
+<CardGroup cols={2}>
+  <Card title="New CSV Columns" icon="table-columns" href="/new-shipping-options/new-columns">
+    Transit times, free shipping thresholds, and the full column layout.
+  </Card>
+  <Card title="Import Guide" icon="file-import" href="/import-guide">
+    Step-by-step instructions for uploading your CSV.
+  </Card>
+</CardGroup>

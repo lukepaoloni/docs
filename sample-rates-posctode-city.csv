@@ -1,11 +1,11 @@
-Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,Order Subtotal >=,Order Subtotal <=,Weight >=,Weight <=
-UK Standard,GB,United Kingdom,*,*,*,Royal Mail Tracked 24®,,3.50 GBP,,199.99 GBP,,
-UK Standard,GB,United Kingdom,*,*,*,Royal Mail Tracked 24®,,0.00 GBP,200.00 GBP,,,
-UK Standard,GB,United Kingdom,*,*,*,DPD Next Day,,3.00 GBP,,,,2.00 kg
-UK Standard,GB,United Kingdom,*,*,*,DPD Two Day,,10.00 GBP,,,2.00 kg,
-Local Delivery,GB,United Kingdom,*,SW1A 1AA,London,London Central Delivery,Same day delivery within SW1A,5.00 GBP,,,,
-Local Delivery,GB,United Kingdom,*,E1*,London,London East Delivery,Standard delivery for East London,4.00 GBP,,,,
-US Mainland,US,United States,*,*,*,FedEx Ground,3-5 business days,12.00 USD,,,,
-US Mainland,US,United States,*,90210,Beverly Hills,Beverly Hills Premium,VIP Delivery Service,25.00 USD,,,,
-Europe,FR,France,*,*,*,Colissimo International,,15.00 EUR,,,,
-Europe,DE,Germany,*,*,*,DHL Paket,,14.00 EUR,,,,
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,Order Subtotal >=,Order Subtotal <=,Weight >=,Weight <=,Transit Time Min Days,Transit Time Max Days,Free Min Order Amount
+UK Standard,GB,United Kingdom,*,*,*,Royal Mail Tracked 24®,,3.50 GBP,,199.99 GBP,,,1,2,
+UK Standard,GB,United Kingdom,*,*,*,Royal Mail Tracked 24®,,0.00 GBP,200.00 GBP,,,,1,2,
+UK Standard,GB,United Kingdom,*,*,*,DPD Next Day,,3.00 GBP,,,,2.00 kg,1,1,
+UK Standard,GB,United Kingdom,*,*,*,DPD Two Day,,10.00 GBP,,,2.00 kg,,2,2,
+UK Standard,GB,United Kingdom,*,SW1A 1AA,London,London Central Delivery,Same day delivery within SW1A,5.00 GBP,,,,1,1,
+UK Standard,GB,United Kingdom,*,E1*,London,London East Delivery,Standard delivery for East London,4.00 GBP,,,,1,2,
+US Mainland,US,United States,*,*,*,FedEx Ground,3-5 business days,12.00 USD,,,,3,5,75.00 USD
+US Mainland,US,United States,*,90210,Beverly Hills,Beverly Hills Premium,VIP Delivery Service,25.00 USD,,,,1,2,
+Europe,FR,France,*,*,*,Colissimo International,,15.00 EUR,,,,5,8,150.00 EUR
+Europe,DE,Germany,*,*,*,DHL Paket,,14.00 EUR,,,,3,5,150.00 EUR

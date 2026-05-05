@@ -22,8 +22,9 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 | Order Subtotal \<= | No | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | "100.00 USD" |
 | Weight \>= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "10 kg" |
 | Weight \<= | No | All Plans | Number (uses store unit) or Number + Unit (g, kg, oz, lb) | "20kg" |
-| Transit Time Min Days | No | <Badge color="blue" size="sm">Coming Soon</Badge> | Minimum delivery days | 3 |
-| Transit Time Max Days | No | <Badge color="blue" size="sm">Coming Soon</Badge> | Maximum delivery days | 7 |
+| Transit Time Min Days | No | New Shipping Options | Whole number, 1 or greater | `3` |
+| Transit Time Max Days | No | New Shipping Options | Whole number, 1 or greater | `7` |
+| Free Min Order Amount | No | New Shipping Options | Number + currency code | `50.00 GBP` |
 
 ## What each column means
 
@@ -1500,40 +1501,58 @@ For example:
   If you don't specify a unit, double-check your Shopify Admin (**Settings > General > Store defaults**) to confirm which unit your store uses.
 </Tip>
 
-### Transit Time Min Days and Max Days
-<Badge color="blue">Coming Soon</Badge>
+### Transit Time Min Days and Transit Time Max Days
 
-The delivery time window. For example:
+<Note>
+  Requires [New Shipping Options](/new-shipping-options/enable) to be enabled.
+</Note>
 
-- **Transit Time Min Days = 3** and **Transit Time Max Days = 7** = delivery in 3 to 7 business days
-- **Transit Time Min Days = 1** and **Transit Time Max Days = 1** = next day delivery
-- Leave both blank = no transit time displayed
+Shows customers an estimated delivery window at checkout. Enter a whole number of 1 or greater in each column.
+
+- **Min = 3, Max = 7** — delivery in 3 to 7 days
+- **Min = 1, Max = 1** — next-day delivery
+- Leave both blank — no delivery window shown
+
+Set both together or leave both blank. The minimum cannot exceed the maximum.
+
+### Free Min Order Amount
+
+<Note>
+  Requires [New Shipping Options](/new-shipping-options/enable) to be enabled.
+</Note>
+
+The order value above which this rate becomes free. When a customer's order reaches the threshold, Shopify charges nothing for that rate. The normal price applies for orders below the threshold.
+
+**Format:** A number followed by a three-letter currency code, separated by a space — for example `50.00 GBP` or `100.00 USD`. Leave blank for no threshold.
+
+- Must be greater than zero.
+- Currency code must match the currency in the `Price` column for that row.
+- If used with [grouped (tiered) rates](/new-shipping-options/grouped-rates), all rows in the group that have a value must use the same amount. Rows with a blank are fine.
 
 ## Inline example
 
 Here's what a valid set of shipping rates looks like:
 
-| Zone | Country Code | Country Name | Province | Name | Price | Order Subtotal \>= | Order Subtotal \<= | Weight \>= | Weight \<= | Transit Time Min Days | Transit Time Max Days |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| US Standard | US | United States | | Standard Shipping | 9.99 | 0 | 100 | 0 | 5kg | 3 | 7 |
-| US Standard | US | United States | | Standard Shipping | 14.99 | 100 | 500 | 0 | 5kg | 3 | 7 |
-| US Express | US | United States | | Express Shipping | 19.99 | 0 USD | 100 USD | 0 | 1kg | 1 | 2 |
-| UK Standard | GB | United Kingdom | | UK Delivery | 7.99 | 0 GBP | 100 GBP | 0 | 2000g | 2 | 5 |
+| Zone | Country Code | Country Name | Province | Name | Price | Order Subtotal \>= | Order Subtotal \<= | Weight \>= | Weight \<= | Transit Time Min Days | Transit Time Max Days | Free Min Order Amount |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| US Standard | US | United States | | Standard Shipping | 9.99 | 0 | 49.99 | | | 3 | 7 | 75.00 USD |
+| US Standard | US | United States | | Standard Shipping | 14.99 | 50.00 | | | | 3 | 7 | 75.00 USD |
+| US Express | US | United States | | Express Shipping | 19.99 | | | | | 1 | 2 | |
+| UK Standard | GB | United Kingdom | | UK Delivery | 7.99 | | | | 2.00 kg | 2 | 5 | 75.00 GBP |
 
 ```csv Copy raw CSV
-Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days"
-US Standard,US,United States,,,,"Standard Shipping","Delivery in 3-7 days",9.99,0,100,0,5kg,3,7
-US Standard,US,United States,,,,"Standard Shipping","Delivery in 3-7 days",14.99,100,500,0,5kg,3,7
-US Express,US,United States,,,,"Express Shipping","Delivery in 1-2 days",19.99,0 USD,100 USD,0,1kg,1,2
-UK Standard,GB,United Kingdom,,,,"UK Delivery","Delivery to UK in 2-5 days",7.99,0 GBP,100 GBP,0,2000g,2,5
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,"Order Subtotal >=","Order Subtotal <=","Weight >=","Weight <=","Transit Time Min Days","Transit Time Max Days","Free Min Order Amount"
+US Standard,US,United States,,,,"Standard Shipping",,9.99,0,49.99,,,3,7,75.00 USD
+US Standard,US,United States,,,,"Standard Shipping",,14.99,50.00,,,,3,7,75.00 USD
+US Express,US,United States,,,,"Express Shipping",,19.99,,,,,1,2,
+UK Standard,GB,United Kingdom,,,,"UK Delivery",,7.99,,,,2.00 kg,2,5,75.00 GBP
 ```
 
 This example shows:
 
-- Two US zones (Standard and Express) with different weight ranges
-- Tiered pricing — orders over $100 get a different rate
-- A UK zone with its own pricing
-- Delivery time estimates for each zone
+- **Tiered rate** — "Standard Shipping" has two rows with the same name: orders under \$50 pay \$9.99, orders \$50 and above pay \$14.99. Both tiers offer free shipping above \$75.
+- **Flat rate** — "Express Shipping" is a single rate with no conditions and a transit time of 1–2 days.
+- **Weight-capped rate** — "UK Delivery" applies to packages up to 2 kg, with free shipping above £75.
 
 ## Download samples
 
@@ -1574,7 +1593,9 @@ When the minimum weight is 0 (or empty), the rate applies to all packages from t
 **What to do:** This is normal — leave the minimum at 0 if there's no lower limit.
 
 ### Consecutive weight ranges
-For complete coverage, create overlapping ranges like this:
+For complete coverage, create consecutive ranges with no gaps between them.
+
+**Rates with different names** — each range can start exactly where the previous one ends:
 
 | Weight \>= | Weight \<= |
 |-----------|------------|
@@ -1582,9 +1603,41 @@ For complete coverage, create overlapping ranges like this:
 | 500g | 1kg |
 | 1kg | 2kg |
 
-**What happens:** Each package falls into exactly one range — there's no gap between 500g and 501g that would charge the wrong price.
+**Grouped (tiered) rates with the same name** — when using [New Shipping Options](/new-shipping-options/grouped-rates), the next tier must start at `prev.max + 0.0001`. If tier 1 ends at `5.00 kg`, tier 2 must start at `5.0001 kg`:
 
-**What to do:** Always use consecutive ranges with no gaps.
+| Weight \>= | Weight \<= |
+|-----------|------------|
+| 0 | 5.00 kg |
+| 5.0001 kg | 10.00 kg |
+| 10.0001 kg | |
+
+**What happens:** Each package falls into exactly one range.
+
+**What to do:** Always use consecutive ranges with no gaps. If you see a contiguity error on import, the error message tells you the exact value the next tier must start at.
+
+### Consecutive order subtotal ranges
+
+The same rule applies to subtotal-based ranges, with a gap of 0.01 (one penny or cent) between tiers.
+
+**Rates with different names** — each range can start exactly where the previous one ends:
+
+| Order Subtotal \>= | Order Subtotal \<= |
+|-------------------|-------------------|
+| 0 | 50.00 |
+| 50.00 | 100.00 |
+| 100.00 | |
+
+**Grouped (tiered) rates with the same name** — when using [New Shipping Options](/new-shipping-options/grouped-rates), the next tier must start at `prev.max + 0.01`. If tier 1 ends at `49.99`, tier 2 must start at `50.00`:
+
+| Order Subtotal \>= | Order Subtotal \<= |
+|-------------------|-------------------|
+| 0 | 49.99 |
+| 50.00 | 99.99 |
+| 100.00 | |
+
+**What happens:** Each order falls into exactly one tier.
+
+**What to do:** Always use consecutive ranges with no gaps. The error message on import tells you the exact value the next tier must start at.
 
 ### Blank province or postcode
 If you leave Province, Postcode, or City blank, the rate applies to the entire country.

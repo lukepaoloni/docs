@@ -16,9 +16,17 @@
           "index",
           "export-guide",
           "spreadsheet-reference",
-              "import-guide",
-              "troubleshooting",
-              "changelog"
+          "import-guide",
+          "troubleshooting",
+          "changelog"
+        ]
+      },
+      {
+        "group": "New Shipping Options",
+        "pages": [
+          "new-shipping-options/enable",
+          "new-shipping-options/new-columns",
+          "new-shipping-options/grouped-rates"
         ]
       }
     ]

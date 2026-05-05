@@ -1,0 +1,93 @@
+---
+title: "New CSV Columns"
+description: "Reference for the three new columns in the v1.2 CSV format: transit times, free shipping thresholds, and the updated column layout."
+---
+
+With New Shipping Options enabled, you can add three things to any shipping rate: an estimated delivery window, a free shipping threshold, and tiered pricing. All three are set in your CSV — this page covers how to fill in each column.
+
+<Note>
+  These columns only take effect when **New Shipping Options** is enabled. See [Enabling New Shipping Options](/new-shipping-options/enable) to turn it on.
+</Note>
+
+## Transit Time Min Days and Transit Time Max Days
+
+These two columns let you show customers an estimated delivery window at checkout alongside the rate name and price.
+
+| Column | Description | Example |
+|--------|-------------|---------|
+| `Transit Time Min Days` | Earliest expected delivery day | `2` |
+| `Transit Time Max Days` | Latest expected delivery day | `5` |
+
+**Format:** A whole number of 1 or greater. Decimals, zero, negative numbers, and non-numeric values are all rejected.
+
+**Rules:**
+- Set both columns together or leave both blank. A row with only one side filled is accepted by the app but may not display correctly at checkout.
+- The minimum cannot exceed the maximum.
+- If both cells are blank, no delivery window is shown for that rate.
+
+**On export:** If a rate in Shopify has no transit time set, both cells are blank — not zero.
+
+### Transit time errors
+
+| Error message | Cause | Fix |
+|--------------|-------|-----|
+| `Transit Time Min must be a positive integer (minimum 1)` | Min is zero, negative, a decimal, or non-numeric | Enter a whole number of 1 or greater, or leave blank |
+| `Transit Time Max must be a positive integer (minimum 1)` | Max is zero, negative, a decimal, or non-numeric | Enter a whole number of 1 or greater, or leave blank |
+| `Transit Time Min cannot exceed Transit Time Max` | The minimum is larger than the maximum | Correct whichever value is wrong |
+
+---
+
+## Free Min Order Amount
+
+This column sets an order value above which a shipping rate becomes free. When a customer's order total reaches your threshold, Shopify charges nothing for that rate. The normal price applies for orders below the threshold.
+
+| Column | Description | Example |
+|--------|-------------|---------|
+| `Free Min Order Amount` | Order value above which this rate is free | `50.00 GBP` |
+
+**Format:** A positive number followed by a three-letter currency code, separated by a space (e.g. `100.00 GBP`, `50.00 USD`, `200.00 EUR`). The currency must match your store's primary currency. Leave the cell blank for no threshold.
+
+**Rules:**
+- Must be greater than zero.
+- Currency code required.
+- Currency must match the `Price` column currency for that row.
+- If used on a [grouped rate](/new-shipping-options/grouped-rates), all rows in the group must use the same threshold value.
+
+### Free threshold errors
+
+<AccordionGroup>
+  <Accordion title="Free Min Order Amount must be greater than zero">
+    **Cause:** You entered `0` or `0.00`.
+
+    **Fix:** Enter a positive amount (e.g. `50.00 GBP`), or leave the cell blank.
+  </Accordion>
+
+  <Accordion title="Free Min Order Amount cannot be negative">
+    **Cause:** The value starts with a minus sign.
+
+    **Fix:** Enter a positive amount instead.
+  </Accordion>
+
+  <Accordion title="Free Min Order Amount must be a numeric value, optionally followed by a currency code">
+    **Cause:** The cell contains text that cannot be parsed as a number (e.g. `fifty pounds` or `£50`).
+
+    **Fix:** Use the format `<number> <currency>` (e.g. `50.00 GBP`). Do not include currency symbols.
+  </Accordion>
+
+  <Accordion title="Free Min Order Amount currency 'X' must match Price currency 'Y'">
+    **Cause:** The currency code in the threshold doesn't match the currency in the `Price` column for the same row.
+
+    **Fix:** Use the same currency code in both columns.
+  </Accordion>
+</AccordionGroup>
+
+## What to do next
+
+<CardGroup cols={2}>
+  <Card title="Grouped / Tiered Rates" icon="layer-group" href="/new-shipping-options/grouped-rates">
+    Set up tiered pricing under a single rate name.
+  </Card>
+  <Card title="Import Guide" icon="file-import" href="/import-guide">
+    Step-by-step instructions for uploading your CSV.
+  </Card>
+</CardGroup>
