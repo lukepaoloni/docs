@@ -62,7 +62,21 @@ Only the highest tier — the one with the largest lower bound — may have a bl
 
 ### No duplicate flat rates
 
-Two rows with the same name and no conditions (no subtotal or weight range) cannot coexist in the same zone. If you want multiple rows with the same name, they must each have tier conditions.
+Two rows with the same name, **the same country**, and no conditions cannot coexist in the same zone. If you want multiple price points for the same country, add `Order Subtotal` or `Weight` conditions to each row to create tiers.
+
+**Listing the same rate for multiple countries is fine.** A rate applies to every country in its zone, and the expected way to express that is one row per country:
+
+```csv
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,...
+Europe,FR,France,*,*,*,Colissimo International,,15.00 EUR,...
+Europe,DE,Germany,*,*,*,Colissimo International,,15.00 EUR,...
+```
+
+These two rows create one "Colissimo International" rate that covers both France and Germany. The rows are deduplicated — Shopify receives a single rate, not two.
+
+<Note>
+  A rate and its `Free Min Order Amount` apply to **all countries in the zone**. If you need a different threshold (or no threshold) for a specific country, put that country in its own zone.
+</Note>
 
 ### Free shipping thresholds must match across the group
 
@@ -90,9 +104,9 @@ If you set a `Free Min Order Amount` on any row in a group, every row that has a
   </Accordion>
 
   <Accordion title='Duplicate shipping rate "X" in zone "Y" — rates with the same name must be tiered'>
-    **Cause:** Two or more rows have the same name with no conditions, making them identical flat rates.
+    **Cause:** Two or more rows have the same name, the same country, and no conditions — making them identical flat rates for that country.
 
-    **Fix:** If you want multiple price points, add `Order Subtotal` or `Weight` conditions to each row to create tiers. If they were meant to be different rates, give them different names.
+    **Fix:** If you want multiple price points, add `Order Subtotal` or `Weight` conditions to each row to create tiers. If they were meant to be different rates, give them different names. If you were trying to list the same rate for multiple countries, make sure each row uses a different `Country Code` — that is valid and will not trigger this error.
   </Accordion>
 
   <Accordion title="Tier currency 'X' must match group currency 'Y' for shipping option ...">
