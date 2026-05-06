@@ -67,9 +67,9 @@ Two rows with the same name, **the same country**, and no conditions cannot coex
 **Listing the same rate for multiple countries is fine.** A rate applies to every country in its zone, and the expected way to express that is one row per country:
 
 ```csv
-Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,...
-Europe,FR,France,*,*,*,Colissimo International,,15.00 EUR,...
-Europe,DE,Germany,*,*,*,Colissimo International,,15.00 EUR,...
+Zone,Country Code,Country Name,Province,Postcode,City,Name,Description,Price,Order Subtotal >=,Order Subtotal <=,Weight >=,Weight <=,Transit Time Min Days,Transit Time Max Days,Free Min Order Amount
+Europe,FR,France,*,*,*,Colissimo International,,15.00 EUR,,,,,1,3,
+Europe,DE,Germany,*,*,*,Colissimo International,,15.00 EUR,,,,,1,3,
 ```
 
 These two rows create one "Colissimo International" rate that covers both France and Germany. The rows are deduplicated — Shopify receives a single rate, not two.
