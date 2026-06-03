@@ -14,6 +14,10 @@ MatrixRates only accepts **CSV (Comma Separated Values)** files.
 - **The problem:** If you save your spreadsheet as an Excel file (.xlsx or .xls), the app won't be able to read it.
 - **The fix:** In Excel or Google Sheets, go to **File > Save As** (or **Download**) and choose **CSV (Comma Separated Values)**.
 
+<Note>
+  If you're in a European version of Excel, your CSV may use semicolons (`;`) to separate columns instead of commas. These files import automatically — no conversion needed.
+</Note>
+
 ### Missing required columns
 The app looks for specific column names in the first row of your file.
 - **The problem:** If you rename a required column or delete it, the import will fail.
