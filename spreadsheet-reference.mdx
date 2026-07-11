@@ -13,8 +13,8 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 | Country Code | Yes | All Plans | Two-letter country code or `*` for all countries | "US" |
 | Country Name | No | All Plans | Full name of the country | "United States" |
 | Province | No | All Plans | Full state name, comma-separated list, or `*` for all | "California" |
-| Postcode | No | Growth, Scale | Comma-separated ZIP codes or wildcards (902*) | "10001, 10002" |
-| City | No | Growth, Scale | Comma-separated cities or wildcards (New *) | "New York, London" |
+| Postcode | No | Growth, Scale | Comma-separated ZIP codes or wildcards (902*); `*` on its own makes the rate a fallback | "10001, 10002" |
+| City | No | Growth, Scale | Comma-separated cities or wildcards (New *); `*` on its own makes the rate a fallback | "New York, London" |
 | Name | Yes | All Plans | A short name for this rate | "Standard Shipping" |
 | Description | No | All Plans | What the merchant sees at checkout | "Delivery in 3-7 days" |
 | Price | Yes | All Plans | Number (uses store currency) or Number + Currency (USD, GBP, etc.) | 9.99 |
@@ -1431,9 +1431,13 @@ The postal or ZIP code. You can enter a single code, a **comma-separated list** 
 - **90\*** — Matches any code starting with "90" (e.g., 90210, 90001)
 - **\*1AA** — Matches any code ending with "1AA"
 - **SW\* AA** — Matches codes like "SW1A 1AA" or "SW2 0AA"
-- **\*** — Matches everything (same as leaving it blank)
+- **\*** — Fallback: the rate only shows when no other rate in the same country matches the customer's address more specifically. See [Fallback rates](#fallback-rates).
 
-Leave blank if you want the rate to apply to all postcodes.
+Leave blank if you want the rate to apply to all postcodes. A blank cell is always shown — unlike `*`, it is never hidden by more specific rates.
+
+<Note>
+  Always use `*` on its own in the cell. Don't combine it with other patterns in a comma-separated list (e.g. `*, 90210`).
+</Note>
 
 ### City
 <Badge color="green">Growth Plan</Badge> <Badge color="green">Scale Plan</Badge>
@@ -1443,8 +1447,56 @@ The city name. You can enter a single city, a **comma-separated list** (e.g. `Lo
 - **London** — Matches exactly "London"
 - **New \*** — Matches "New York", "New Orleans", etc.
 - **\* city** — Matches "Kansas City", "Jersey City", etc.
+- **\*** — Fallback: the rate only shows when no other rate in the same country matches the customer's address more specifically. See [Fallback rates](#fallback-rates).
 
-Leave blank if you want the rate to apply to all cities in the country or province.
+Leave blank if you want the rate to apply to all cities in the country or province. A blank cell is always shown — unlike `*`, it is never hidden by more specific rates.
+
+<Note>
+  Always use `*` on its own in the cell. Don't combine it with other patterns in a comma-separated list (e.g. `*, Haifa`).
+</Note>
+
+### Fallback rates
+<Badge color="green">Growth Plan</Badge> <Badge color="green">Scale Plan</Badge>
+
+In the **Postcode** and **City** columns, a `*` on its own turns the rate into a **catch-all**: it shows at checkout only when no other rate in the same country matches the customer's address more specifically. This lets you charge one price for specific areas and a different "everywhere else" price — without both rates appearing together.
+
+At checkout, rates fall into three groups:
+
+- **Specific rate** — has at least one Postcode or City pattern that isn't a bare `*` (e.g. `Tel Aviv`, or a partial wildcard like `10*`). It shows when the customer's address matches its city and postcode rules, and is hidden when it doesn't.
+- **Catch-all rate** — every Postcode and City pattern is exactly `*`: City `*` with Postcode blank, Postcode `*` with City blank, or both `*`. It shows only when no specific rate in the same country matches the customer's address, and is hidden when one does.
+- **No location rule** — both Postcode and City are blank. The rate is always shown. It never hides a catch-all, and it is never hidden by specific rates.
+
+A few things to keep in mind:
+
+- **Specific rates never hide each other.** If an exact postcode (`1050`) and a partial wildcard (`10*`) both match the customer's address, both rates show. The only priority is specific over catch-all — there is no further ranking by how specific a pattern is.
+- **Priority applies per country.** Catch-alls and specific rates are compared within the same country in a zone. A specific match in one country never hides a catch-all in another country.
+
+<Warning>
+  `*` means different things in different columns. In **Country Code** and **Province**, `*` means "all countries" / "all provinces" — the rate always applies. Only in **Postcode** and **City** does `*` mean "fallback".
+</Warning>
+
+| Column | What `*` means |
+|--------|----------------|
+| Country Code | All countries — the rate always applies |
+| Province | All provinces — the rate always applies |
+| Postcode | Fallback — shown only when no more specific rate matches |
+| City | Fallback — shown only when no more specific rate matches |
+
+#### Example: higher price for remote cities
+
+Suppose you charge more for delivery to remote cities in Israel, and a standard price everywhere else in the country:
+
+| Zone | Country Code | City | Name | Price |
+|------|--------------|------|------|-------|
+| Domestic | IL | Jerusalem, Safed, Dimona | Remote Delivery | 69.00 ILS |
+| Domestic | IL | * | Standard Delivery | 35.00 ILS |
+
+At checkout:
+
+- Customers in **Jerusalem, Safed, or Dimona** see only **Remote Delivery** (69.00 ILS). Standard Delivery is a catch-all, so it's hidden wherever a specific rate matches.
+- Customers **everywhere else in Israel** see only **Standard Delivery** (35.00 ILS).
+
+If Standard Delivery's City cell were left **blank** instead of `*`, it would show for everyone — customers in the three remote cities would see both rates and could choose the cheaper one.
 
 ### Name
 A short, friendly name for this shipping rate. This is what your customer sees at checkout. Keep it under 50 characters.
@@ -1639,12 +1691,12 @@ The same rule applies to subtotal-based ranges, with a gap of 0.01 (one penny or
 
 **What to do:** Always use consecutive ranges with no gaps. The error message on import tells you the exact value the next tier must start at.
 
-### Blank province or postcode
+### Blank province, postcode, or city
 If you leave Province, Postcode, or City blank, the rate applies to the entire country.
 
-**What happens:** The rate becomes the default for that country — any order from that country uses this rate unless a more specific match exists.
+**What happens:** The rate is always shown for that country. A blank Postcode or City cell is never hidden by more specific rates — customers in an area covered by a specific rate see both rates.
 
-**What to do:** Put your most general rate (the cheapest or slowest option) last in your file so specific rates take priority.
+**What to do:** This is normal if you want the rate offered everywhere. If you instead want a default that steps aside when a more specific rate matches, enter `*` in the Postcode or City column — see [Fallback rates](#fallback-rates).
 
 ## Next steps
 
