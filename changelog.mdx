@@ -3,6 +3,12 @@ title: "Changelog"
 description: "Latest updates and improvements to MatrixRates Import/Export."
 ---
 
+<Update label="October 2026" description="Rest-of-country shipping zones">
+  ### Import Improvements
+
+  - **Rest-of-Country Zones** — A zone with `*` in Province can now share a country with zones that list specific provinces. The `*` zone automatically covers the rest of the country — for example, `Rest of US` with Province `*` plus `Guam` with Province `Guam` now imports, with `Rest of US` covering every US province except Guam. This used to be an import error.
+</Update>
+
 <Update label="June 2026" description="v1.4.0">
   ### Reliability & Import Improvements
 
