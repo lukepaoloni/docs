@@ -288,6 +288,20 @@ The state, province, or region within a country. Enter the full name (like "Cali
 
 - **Multiple Provinces** — You can enter a comma-separated list (e.g., `California, New York, Texas`).
 - **All Provinces** — Leave blank or enter `*` to apply the rate to all provinces in the country.
+- **Rest of a country** — If one zone enters `*` in Province for a country and your other zones list specific provinces of that same country, the `*` zone automatically covers every province the other zones don't list. The more specific row wins.
+
+| Zone | Country Code | Province |
+|------|--------------|----------|
+| Rest of US | US | * |
+| Guam | US | Guam |
+
+Here, `Rest of US` covers every US state and territory except Guam, and `Guam` covers only Guam.
+
+<Note>
+  - US territories such as Guam and Puerto Rico are provinces of the United States. Use Country Code `US` and the province name (for example `Guam`), not a code like `GU`.
+  - Only one zone per country can use `*` in Province. Your other zones for that country must list provinces by name.
+  - When you export, the rest-of-country zone's Province cell lists the remaining provinces by name instead of `*`. You can re-import the file as-is.
+</Note>
 
 <Accordion title="See supported province names">
 | Province                                 | Country Name         | Country Code |
@@ -1472,13 +1486,13 @@ A few things to keep in mind:
 - **Priority applies per country.** Catch-alls and specific rates are compared within the same country in a zone. A specific match in one country never hides a catch-all in another country.
 
 <Warning>
-  `*` means different things in different columns. In **Country Code** and **Province**, `*` means "all countries" / "all provinces" — the rate always applies. Only in **Postcode** and **City** does `*` mean "fallback".
+  `*` means different things in different columns. In **Country Code**, `*` means "all countries", and in **Province** it means "all provinces not listed in another zone" — the rate always applies there. Only in **Postcode** and **City** does `*` mean "fallback".
 </Warning>
 
 | Column | What `*` means |
 |--------|----------------|
 | Country Code | All countries — the rate always applies |
-| Province | All provinces — the rate always applies |
+| Province | All provinces not listed in another zone — the rate always applies |
 | Postcode | Fallback — shown only when no more specific rate matches |
 | City | Fallback — shown only when no more specific rate matches |
 
