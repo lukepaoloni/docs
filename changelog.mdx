@@ -9,6 +9,17 @@ description: "Latest updates and improvements to MatrixRates Import/Export."
   - **Rest-of-Country Zones** — A zone with `*` in Province can now share a country with zones that list specific provinces. The `*` zone automatically covers the rest of the country — for example, `Rest of US` with Province `*` plus `Guam` with Province `Guam` now imports, with `Rest of US` covering every US province except Guam. This used to be an import error.
 </Update>
 
+<Update label="July 2026" description="v1.5.0">
+  ### Postcode, City & Import Improvements
+
+  - **Catch-All Rates Act as a Fallback** — A rate with `*` in Postcode or City now only shows at checkout when no more specific postcode or city rate in the same zone matches the customer's address.
+  - **Non-Latin City Names** — City names in non-Latin scripts (for example Japanese, Greek or Cyrillic), including punctuation inside the name, now import correctly.
+  - **Clearer City & Postcode Errors** — A shipping method that lists different City or Postcode values across its rows for the same country is now flagged as an error, instead of silently keeping only the last row's value.
+  - **City & Postcode in the Import Preview** — The preview now shows each method's City and Postcode values so you can check them before importing.
+  - **More Reliable Restores** — When an import fails partway, restoring your previous zones is more robust, and the email now tells you how many of your previous zones were restored.
+  - **Zone Name Tidy-Up** — Extra spaces around zone names are trimmed automatically.
+</Update>
+
 <Update label="June 2026" description="v1.4.0">
   ### Reliability & Import Improvements
 
