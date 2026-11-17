@@ -28,6 +28,14 @@
           "new-shipping-options/new-columns",
           "new-shipping-options/grouped-rates"
         ]
+      },
+      {
+        "group": "Market-Driven Shipping",
+        "pages": [
+          "market-driven-shipping/overview",
+          "market-driven-shipping/same-name-rates",
+          "market-driven-shipping/after-uninstall"
+        ]
       }
     ]
   },

@@ -79,6 +79,20 @@ If you see a specific error message during import, find it below for a step-by-s
     2. Check the `Weight \>=` and `Weight \<=` columns.
     3. Change any negative numbers to `0` or higher.
   </Accordion>
+
+  <Accordion title='Rename the rates marked "Hidden by MatrixRates rule" before importing.'>
+    You'll only see this on stores that use [market-driven shipping](/market-driven-shipping/overview). It appears beside the **Import rates** button in the preview, and the button is switched off. You may also see the longer version: `Some rates have a postcode or city rule and share their name with a Shopify rate, so their rules would also hide the Shopify rate from some buyers. Rename them in your CSV before importing:` followed by the rate names.
+
+    **Cause:** A rate in your file has a `Postcode` or `City` restriction and exactly the same name as a rate you created in Shopify for the same market. MatrixRates applies postcode and city restrictions by hiding a rate by name, so your Shopify rate would be hidden from the same buyers.
+
+    **Fix:**
+    1. In the preview, find the rate with the `Hidden by MatrixRates rule` badge. The note under it names the rate.
+    2. Click **Cancel** to close the preview.
+    3. Rename one of the two rates so the names are different. Either change the `Name` column in your CSV, or rename the rate in Shopify.
+    4. Upload your file again and click **Import rates**.
+
+    See [Rates With the Same Name](/market-driven-shipping/same-name-rates#when-an-import-is-blocked) for more detail.
+  </Accordion>
 </AccordionGroup>
 
 ## Still stuck?

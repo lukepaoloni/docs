@@ -1,0 +1,56 @@
+---
+title: "Rates With the Same Name"
+description: "What happens when an imported rate has the same name as a rate you created in Shopify."
+---
+
+This page applies to stores that use [market-driven shipping](/market-driven-shipping/overview). On these stores your imported MatrixRates rates and the rates you created in Shopify are offered side by side, so two rates in the same market can end up with the same name.
+
+## The Same name badge
+
+MatrixRates compares the names of your imported rates with the names of the rates you created in Shopify, market by market. Upper and lower case are ignored, so `Standard` and `standard` count as the same name. Carrier rates that are calculated at checkout are not compared.
+
+When two names match in a market, you'll see:
+
+- A `Same name` badge on the market and on both rates, in the import preview and on the Markets page. The market opens automatically so you can't miss it.
+- This note under the rates:
+
+  > Buyers may see two rates with the same name at checkout.
+
+- After importing, the success message ends with `1 rate name also exists in Shopify.` (or the number of names that match).
+- If your import finishes by email, the email has a **Rate names that also exist in Shopify** section listing the names for each market.
+
+A `Same name` badge is a warning. It does not stop you importing.
+
+### What to do
+
+Rename one of the two rates in your CSV or in Shopify so buyers can tell them apart.
+
+- **To rename the imported rate:** change the `Name` column in your file and import again.
+- **To rename your Shopify rate:** edit the rate in the market's shipping settings in Shopify admin.
+
+## When an import is blocked
+
+A same-named rate becomes a bigger problem when your imported rate has a `Postcode` or `City` restriction.
+
+MatrixRates applies postcode and city restrictions by hiding a rate, by name, from buyers whose address doesn't match. If one of your Shopify rates has exactly the same name, it is hidden from those buyers as well. Buyers outside your postcode or city list could be left with no shipping rate at all.
+
+To prevent this, MatrixRates checks your file when you upload it. If it finds this problem:
+
+- The Shopify rate has a `Hidden by MatrixRates rule` badge in the preview.
+- A note under the rates names the rate, for example:
+
+  > Some buyers can't see the Shopify rate "Standard", because a MatrixRates postcode or city rule hides every rate with that name. Rename "Standard" in your CSV or in Shopify.
+
+- The **Import rates** button is switched off, with this message beside it:
+
+  > Rename the rates marked "Hidden by MatrixRates rule" before importing.
+
+### How to fix it
+
+1. Click **Cancel** to close the preview.
+2. Rename one of the two rates so the names are different. Either change the `Name` column in your CSV, or rename the rate in Shopify.
+3. Upload your file again. The `Hidden by MatrixRates rule` badge is gone and the **Import rates** button works.
+
+<Note>
+  The same badge can appear on the Markets page after an import, if you later create a Shopify rate with the same name as an imported rate that has a postcode or city restriction. The fix is the same: rename one of them. If you rename the rate in your CSV, import the file again.
+</Note>
