@@ -1,0 +1,123 @@
+---
+title: "Market-Driven Shipping"
+description: "How MatrixRates works on stores that use Shopify's market-driven shipping."
+---
+
+Shopify is moving shipping rates into Markets, so you manage where you sell and how you ship in the same place. Shopify calls this market-driven shipping. When your store uses it, MatrixRates looks and works a little differently. This page explains what changes.
+
+## Does this apply to your store?
+
+Open MatrixRates from your Shopify admin (**Apps** > **MatrixRates Import/Export**).
+
+- If the home page shows a **Your shipping rates** card and a **Markets** card, your store uses market-driven shipping and this page applies to you.
+- If the home page shows a list of delivery profiles, nothing has changed for you. Follow the [Import Guide](/import-guide) and [Export Guide](/export-guide) as usual.
+
+## What's different
+
+- **One import and one export for the whole store.** You don't pick a delivery profile or a location. One file covers every market and every location you fulfil from.
+- **MatrixRates provides your imported rates to Shopify.** They show at checkout beside any rates you created yourself in Shopify. Importing never changes the rates you created in Shopify.
+- **You change imported rates by importing again.** In Shopify admin you can switch a MatrixRates rate on or off, but you can't edit it there.
+- **Importing replaces all MatrixRates rates in every market.** Your file is the full list of MatrixRates rates, not an addition to what's already there.
+- **Your spreadsheet stays the same.** The columns in the [Spreadsheet Reference](/spreadsheet-reference) are unchanged, and the `Zone` column is still required.
+
+<Note>
+  Importing again switches every imported rate back on, including any you switched off in Shopify.
+</Note>
+
+## The Markets page
+
+The **Markets** card lists your markets, with the countries each one covers. Click a market's name to open it. An open market shows two lists:
+
+- **Shopify rates** are the rates you created in Shopify for that market. They are shown for reference only. A carrier rate shows as `Calculated at checkout` instead of a price.
+- **MatrixRates rates** are the rates you imported that ship to that market.
+
+A rate appears under every market whose countries it covers. If a rate only covers part of a country, the app adds a note after its name, such as `Standard · Amazonas only` or `Standard · rest of Brazil`.
+
+The Markets page lists your regional markets. Markets for B2B company locations and point of sale locations aren't shown.
+
+### What the badges mean
+
+| Badge | Meaning |
+|-------|---------|
+| `2 Shopify` | The number of active rates you created in Shopify for this market. |
+| `3 MatrixRates` | The number of imported rates that ship to this market. |
+| `Same name` | An imported rate has the same name as one of your Shopify rates in this market. See [Rates With the Same Name](/market-driven-shipping/same-name-rates). |
+| `Hidden by MatrixRates rule` | A postcode or city rule on an imported rate also hides one of your Shopify rates. See [Rates With the Same Name](/market-driven-shipping/same-name-rates#when-an-import-is-blocked). |
+| `Not shipping` | Shipping is switched off for this market in Shopify. Your MatrixRates rates aren't offered there either, and the list is headed **MatrixRates rates (not offered)**. |
+| `Draft` | The market is a draft in Shopify, so its rates aren't live yet. |
+| `Inactive` | The rate is switched off in Shopify. |
+| `Not sellable` | Shown on the **No market** group. See below. |
+
+### The No market group
+
+If your file has rates for a country that isn't in any of your markets, those rates appear in a **No market** group at the bottom of the list with a `Not sellable` badge. The app tells you:
+
+> Customers in these countries can't check out because they aren't in any active market. Add them to a market in Shopify admin under Settings → Markets.
+
+## Importing rates
+
+<Warning>
+  Importing replaces all MatrixRates rates in every market. If you have imported before, [export a copy](#exporting-rates) of your current rates first.
+</Warning>
+
+<Steps>
+  <Step title="Open MatrixRates">
+    Log in to your Shopify Admin and navigate to **Apps** > **MatrixRates Import/Export**. You'll see the **Your shipping rates** card at the top of the page.
+  </Step>
+  <Step title="Click Import Rates">
+    Click the **Import Rates** button. The **Import rates by CSV** popup opens.
+  </Step>
+  <Step title="Select your file">
+    Click the **Add file** button and select your spreadsheet file from your computer, then click **Upload and preview**. The app checks your file and opens the **Preview your import** screen.
+  </Step>
+  <Step title="Check where your rates will appear">
+    The preview tells you how many rates you are importing and how many countries they cover. Under **Where these rates will appear** you'll see one card for each market your rates reach, laid out the same way as the Markets page.
+
+    Look for these before you continue:
+
+    - A `Same name` badge means an imported rate shares its name with one of your Shopify rates. You can still import. See [Rates With the Same Name](/market-driven-shipping/same-name-rates).
+    - A `Hidden by MatrixRates rule` badge means the **Import rates** button is switched off until you rename a rate. See [When an import is blocked](/market-driven-shipping/same-name-rates#when-an-import-is-blocked).
+    - A **No market** card means some of your rates are for countries that aren't in any of your markets.
+  </Step>
+  <Step title="Confirm Import">
+    Click **Import rates**. You'll see the message `Successfully imported the shipping rates.` and the Markets page updates to show your new rates.
+
+    For a larger file you'll see `We will send you an email once we have finished importing.` instead. The import finishes in the background and the email tells you the result.
+  </Step>
+</Steps>
+
+Your plan's zone and rate limits apply in the same way as on any other store.
+
+## Exporting rates
+
+<Note>
+  **Plan Requirement:** Exporting shipping rates is available on the **Growth** and **Scale** plans.
+</Note>
+
+<Steps>
+  <Step title="Open MatrixRates">
+    From your Shopify admin, go to **Apps** and click **MatrixRates Import/Export**.
+  </Step>
+  <Step title="Click Export Rates">
+    Click the **Export Rates** button in the **Your shipping rates** card. The **Export rates** popup opens.
+  </Step>
+  <Step title="Export">
+    Ensure **Plain CSV file** is selected and click **Export rates**. You'll see the message `We will email you the export.`
+  </Step>
+  <Step title="Check your inbox">
+    Open the email from us and download the attached CSV file.
+  </Step>
+</Steps>
+
+The file contains your MatrixRates rates only, in the same column layout as any other export. The rates you created in Shopify are not included, because MatrixRates can't import them. If you import the file again without editing it, you get the same rates back.
+
+## What to do next
+
+<CardGroup cols={2}>
+  <Card title="Rates With the Same Name" icon="triangle-exclamation" href="/market-driven-shipping/same-name-rates">
+    What the Same name badge means and when an import is blocked.
+  </Card>
+  <Card title="Your Rates After Uninstalling" icon="plug" href="/market-driven-shipping/after-uninstall">
+    Imported rates stay live after you uninstall. Learn how to switch them off.
+  </Card>
+</CardGroup>
