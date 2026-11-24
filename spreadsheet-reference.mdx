@@ -9,7 +9,7 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 
 | Column | Required | Available On | Accepted values | Example |
 |--------|----------|--------------|-----------------|---------|
-| Zone | Yes | All Plans | Any zone name you've set up in Shopify | "US Standard" |
+| Zone | Yes | All Plans | A name for the shipping zone | "US Standard" |
 | Country Code | Yes | All Plans | Two-letter country code or `*` for all countries | "US" |
 | Country Name | No | All Plans | Full name of the country | "United States" |
 | Province | No | All Plans | Full state name, comma-separated list, or `*` for all | "California" |
@@ -29,10 +29,10 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 ## What each column means
 
 ### Zone
-The shipping zone this rate applies to. This must match a zone you've already created in the MatrixRates app. If the zone name doesn't exist, the import will fail.
+The shipping zone this rate applies to. Rows that share a zone name are grouped into one zone, and a name you haven't used before creates a new zone.
 
 <Note>
-  **Stores using market-driven shipping:** the `Zone` column is still required, and rows that share a zone name are still grouped together. The app shows your rates by market instead of by zone, so zone names don't appear on the [Markets page](/market-driven-shipping/overview#the-markets-page), but they are kept in your export.
+  **On market-driven shipping,** the app lists your rates by [market](/market-driven-shipping/overview#the-markets-page), so zone names don't appear in the app. They are kept in your export.
 </Note>
 
 ### Country Code
