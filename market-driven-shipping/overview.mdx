@@ -8,10 +8,10 @@ description: "What changes in MatrixRates when your Shopify store uses market-dr
 - **One import and one export for the whole store.** You don't pick a delivery profile or a location. One file covers every market and every location you ship from.
 - **MatrixRates provides your imported rates to Shopify.** They show at checkout beside any rates you created yourself in Shopify. Importing never changes the rates you created in Shopify.
 - **Importing replaces all MatrixRates rates in every market.** Your file is the full list of MatrixRates rates, not an addition to what's already there, so you change a rate by editing your file and importing again. In Shopify admin you can switch a MatrixRates rate on or off, but you can't edit it there.
-- **Your spreadsheet stays the same.** The columns in the [Spreadsheet Reference](/spreadsheet-reference) are unchanged, and the `Zone` column is still required.
+- **Your spreadsheet uses the same columns.** They are the ones in the [Spreadsheet Reference](/spreadsheet-reference). You can leave `Zone` blank, and the app groups those rows into zones for you.
 
 <Note>
-  You can switch a MatrixRates rate off in Shopify, but that doesn't survive an import. An import replaces every MatrixRates rate with a new one, and new rates start switched on. If you had switched any off, switch them off again after importing.
+  To switch a MatrixRates rate off, set its [`Active`](/spreadsheet-reference#active) cell to `no` before importing. Each import creates every rate switched on or off, as its Active cell says. An export shows whether each rate is currently on or off.
 </Note>
 
 Shopify's Help Center explains [how market-driven shipping works](https://help.shopify.com/en/manual/fulfillment/setup/shipping-options/understanding-shipping-options-by-market), including how rates combine at checkout.
@@ -35,7 +35,7 @@ A rate appears under every market whose countries it covers. On a market that co
 | `Hidden by MatrixRates rule` | A postcode or city rule on an imported rate also hides one of your Shopify rates. See [Rates With the Same Name](/market-driven-shipping/same-name-rates#when-an-import-is-blocked). |
 | `Not shipping` | Shipping is switched off for this market in Shopify. Your MatrixRates rates aren't offered there either, and the list is headed **MatrixRates rates (not offered)**. |
 | `Draft` | The market is a draft in Shopify, so its rates aren't live yet. |
-| `Inactive` | The Shopify rate is switched off. The app doesn't show this for imported rates, so check those in Shopify. |
+| `Inactive` | The rate is switched off. This shows for MatrixRates rates too, whether you switched them off with the [`Active`](/spreadsheet-reference#active) column or in Shopify admin. A switched-off MatrixRates rate is never marked `Same name`. |
 | `Not sellable` | Shown on the **No market** group. See below. |
 
 ### The No market group

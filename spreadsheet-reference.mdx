@@ -9,7 +9,7 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 
 | Column | Required | Available On | Accepted values | Example |
 |--------|----------|--------------|-----------------|---------|
-| Zone | Yes | All Plans | A name for the shipping zone | "US Standard" |
+| Zone | Yes (optional on market-driven shipping) | All Plans | A name for the shipping zone | "US Standard" |
 | Country Code | Yes | All Plans | Two-letter country code or `*` for all countries | "US" |
 | Country Name | No | All Plans | Full name of the country | "United States" |
 | Province | No | All Plans | Full state name, comma-separated list, or `*` for all | "California" |
@@ -25,11 +25,16 @@ This page explains every column in your shipping rates spreadsheet file. Use it 
 | Transit Time Min Days | No | New Shipping Options | Whole number, 1 or greater | `3` |
 | Transit Time Max Days | No | New Shipping Options | Whole number, 1 or greater | `7` |
 | Free Min Order Amount | No | New Shipping Options | Number + currency code | `50.00 GBP` |
+| Active | No | All Plans | `yes` or `no` (blank means `yes`) | `no` |
 
 ## What each column means
 
 ### Zone
 The shipping zone this rate applies to. Rows that share a zone name are grouped into one zone, and a name you haven't used before creates a new zone.
+
+**On market-driven shipping, Zone is optional.** You can leave a Zone cell blank, or leave the column out of your file. The app groups those rows into zones for you. Countries whose rates are the same in every column apart from the country and province share one zone. If you list different provinces of one country on different rows, each set of provinces gets its own zone.
+
+The app names these zones from their country and province codes, such as `FR, GB` or `US-CA`. A rate for all countries (`*`) goes in a zone named `All countries`. A zone with more than five countries or provinces shows the first five, such as `AT, BE, DE, FR, GB +3 more`. If one of your zones already has that name, the app adds a number, such as `GB (2)`. Your export shows these names. A Zone you fill in is used as written.
 
 <Note>
   **On market-driven shipping,** the app lists your rates by [market](/market-driven-shipping/overview#the-markets-page), so zone names don't appear in the app. They are kept in your export.
@@ -1599,6 +1604,30 @@ The order value above which this rate becomes free. When a customer's order reac
 - Currency code must match the currency in the `Price` column for that row.
 - If used with [grouped (tiered) rates](/new-shipping-options/grouped-rates), all rows in the group that have a value must use the same amount. Rows with a blank are fine.
 
+### Active
+
+Switches a rate on or off from your spreadsheet. A rate set to `no` is imported switched off, so customers don't see it at checkout.
+
+- `yes` — the rate is switched on.
+- `no` — the rate is switched off.
+- Capitals don't matter, so `No` and `NO` work too. A blank cell, or no Active column at all, means `yes`.
+
+If a rate takes up more than one row, every row of that rate must use the same value. With New Shipping Options, that means every tier of a [grouped rate](/new-shipping-options/grouped-rates). Without it, rows with the same name but different conditions are separate rates, so each can have its own value. If the rows of one rate disagree, the import stops with an error such as:
+
+> Row 3: Active no conflicts with yes for shipping option "Standard Shipping" in zone "US Standard"
+
+Any other value, such as `true`, `1` or `off`, stops the import with:
+
+> Row 2: Active must be "yes" or "no"
+
+**Exports** write `yes` or `no` for every rate. A rate you switched off in Shopify stays off when you import your export again.
+
+On stores without market-driven shipping, Shopify admin doesn't list switched-off rates. They stay in your exports as `no`. To switch one back on, change the cell to `yes` and import.
+
+**Plans:** Active is available on all plans. Switched-off rates still count toward your plan's rate limit, and toward the number of rates in your import email.
+
+See [Troubleshooting](/troubleshooting#error-message-reference) for how to fix each error.
+
 ## Inline example
 
 Here's what a valid set of shipping rates looks like:
@@ -1643,6 +1672,8 @@ This example shows:
 
 ### A cell is left blank
 If a cell in a required column is blank, the import will fail. Required columns are: Zone, Country Code, Name, and Price.
+
+On market-driven shipping, Zone may be blank, and the app names the zone for you (see [Zone](#zone)). A blank Active cell means `yes`.
 
 **What happens:** You'll get an error message telling you which row has the problem.
 

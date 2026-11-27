@@ -21,7 +21,7 @@ MatrixRates only accepts **CSV (Comma Separated Values)** files.
 ### Missing required columns
 The app looks for specific column names in the first row of your file.
 - **The problem:** If you rename a required column or delete it, the import will fail.
-- **The fix:** Make sure your file includes all the required columns: `Zone`, `Country Code`, `Name`, and `Price`. Check the [Spreadsheet Reference](/spreadsheet-reference) for the full list.
+- **The fix:** Make sure your file includes all the required columns: `Zone`, `Country Code`, `Name`, and `Price`. On [market-driven shipping](/market-driven-shipping/overview), you may leave `Zone` out. Check the [Spreadsheet Reference](/spreadsheet-reference) for the full list.
 
 ### Invalid values
 Some columns only accept specific types of information.
@@ -44,7 +44,7 @@ If you see a specific error message during import, find it below for a step-by-s
   </Accordion>
 
   <Accordion title="Missing required header: [column_name]">
-    **Cause:** Your file is missing a column that the app needs to process your rates. `Zone`, `Country Code`, `Name`, and `Price` must always be present.
+    **Cause:** Your file is missing a column that the app needs to process your rates. `Zone`, `Country Code`, `Name`, and `Price` must always be present, except on market-driven shipping, where you may leave `Zone` out.
     
     **Fix:**
     1. Open your CSV file.
@@ -78,6 +78,35 @@ If you see a specific error message during import, find it below for a step-by-s
     1. Go to the row number mentioned in the error.
     2. Check the `Weight \>=` and `Weight \<=` columns.
     3. Change any negative numbers to `0` or higher.
+  </Accordion>
+
+  <Accordion title='Row [number]: Active must be "yes" or "no"'>
+    **Cause:** The `Active` cell on that row holds a value the app doesn't recognise, such as `true`, `1` or `off`.
+
+    **Fix:**
+    1. Go to the row number mentioned in the error.
+    2. Change the `Active` cell to `yes` to switch the rate on, or `no` to switch it off. You can also leave it blank, which means `yes`.
+    3. Save your file and import it again.
+
+    See [Active](/spreadsheet-reference#active) for how the column works.
+  </Accordion>
+
+  <Accordion title='Row [number]: Active [yes/no] conflicts with [yes/no] for shipping option "[name]" in zone "[zone]"'>
+    **Cause:** Several rows make up one rate, such as the tiers of a [grouped rate](/new-shipping-options/grouped-rates), and their `Active` cells don't match. A rate is either on or off as a whole, so every row of it needs the same value.
+
+    **Fix:**
+    1. Find the rows with the shipping option name and zone shown in the error.
+    2. Set the `Active` cell on all of them to `yes`, or all of them to `no`.
+    3. Save your file and import it again.
+  </Accordion>
+
+  <Accordion title='Row [number]: Missing required field "zone"'>
+    **Cause:** The `Zone` cell on that row is blank. Every row needs a zone name unless your store uses [market-driven shipping](/market-driven-shipping/overview).
+
+    **Fix:**
+    1. Go to the row number mentioned in the error.
+    2. Enter a zone name in the `Zone` cell. To add the rate to an existing zone, use exactly the same name as the other rows in that zone.
+    3. Save your file and import it again.
   </Accordion>
 
   <Accordion title='Rename the rates marked "Hidden by MatrixRates rule" before importing.'>
